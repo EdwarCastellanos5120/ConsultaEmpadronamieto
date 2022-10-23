@@ -4,11 +4,6 @@
  */
 package com.modelos;
 
-import javax.sound.sampled.Line;
-
-import com.Modelos.Linea;
-import com.Modelos.Persona;
-
 /**
  *
  * @author linda
