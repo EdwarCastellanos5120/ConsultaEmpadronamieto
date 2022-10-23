@@ -101,7 +101,6 @@ CREATE TABLE dbo.tb_personas(
     persona_firma                NVARCHAR(25)    NOT NULL,
     persona_fechaDeNacimiento    date            NOT NULL,
     direccion_codigo             INT             NULL,
-    linea_codigo                 INT             NULL,
     CONSTRAINT Pk_personas                  PRIMARY KEY (persona_codigo), 
     CONSTRAINT Fk_personas_direccion_codigo FOREIGN KEY (direccion_codigo)
     REFERENCES tb_direcciones(direccion_codigo)
@@ -111,11 +110,19 @@ GO
 CREATE TABLE dbo.tb_lineas(
     linea_codigo    INT    IDENTITY(1,1),
     hoja_codigo     INT    NULL,
-    persona_codigo  INT    NULL,
     CONSTRAINT Pk_lineas                PRIMARY KEY (linea_codigo), 
     CONSTRAINT Fk_lineas_hoja_codigo    FOREIGN KEY (hoja_codigo)
-    REFERENCES tb_hojas(hoja_codigo),
-    CONSTRAINT Fk_lineas_persona_codigo FOREIGN KEY (persona_codigo)
-    REFERENCES tb_personas(persona_codigo)
+    REFERENCES tb_hojas(hoja_codigo)
+) ON [PRIMARY]
+GO
+
+CREATE TABLE tb_firmas(
+    persona_codigo    int    NOT NULL,
+    linea_codigo      int    NOT NULL,
+    CONSTRAINT Pk_firmas                PRIMARY KEY  (persona_codigo, linea_codigo), 
+    CONSTRAINT Fk_firmas_persona_codigo FOREIGN KEY (persona_codigo)
+    REFERENCES tb_personas(persona_codigo),
+    CONSTRAINT Fk_firmas_linea_codigo   FOREIGN KEY (linea_codigo)
+    REFERENCES tb_lineas(linea_codigo)
 ) ON [PRIMARY]
 GO
