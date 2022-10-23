@@ -23,9 +23,8 @@ public class Persona {
     private String firma;
     private Date fechaDeNacimiento;
     private Direccion direccion;
-    private Linea linea;
 
-    public Persona(int codigo, String dpi, int padron, String nombre1, String nombre2, String apellido1, String apellido2, String foto, String firma, Date fechaDeNacimiento, Direccion direccion, Linea linea) {
+    public Persona(int codigo, String dpi, int padron, String nombre1, String nombre2, String apellido1, String apellido2, String foto, String firma, Date fechaDeNacimiento, Direccion direccion) {
         this.codigo = codigo;
         this.dpi = dpi;
         this.padron = padron;
@@ -37,7 +36,6 @@ public class Persona {
         this.firma = firma;
         this.fechaDeNacimiento = fechaDeNacimiento;
         this.direccion = direccion;
-        this.linea = linea;
     }
 
     public Persona() {
@@ -130,14 +128,6 @@ public class Persona {
 
     public void setDireccion(Direccion direccion) {
         this.direccion = direccion;
-    }
-
-    public Linea getLinea() {
-        return linea;
-    }
-
-    public void setLinea(Linea linea) {
-        this.linea = linea;
     }
 
 }

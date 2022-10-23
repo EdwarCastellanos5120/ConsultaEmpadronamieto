@@ -11,10 +11,12 @@ package com.Modelos;
 public class Linea {
     private int codigo;
     private Hoja hoja;
+    private Persona persona;
 
-    public Linea(int codigo, Hoja hoja) {
+    public Linea(int codigo, Hoja hoja, Persona persona) {
         this.codigo = codigo;
         this.hoja = hoja;
+        this.persona = persona;
     }
 
     public Linea(){
@@ -37,5 +39,12 @@ public class Linea {
         this.hoja = hoja;
     }
     
+    public Persona getPersona() {
+        return persona;
+    }
+
+    public void setPersona(Persona persona) {
+        this.persona = persona;
+    }
     
 }
