@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.Vistas;
+package com.vistas;
 
 import java.awt.Image;
 import javax.swing.*;
@@ -39,7 +39,7 @@ public class Inicio extends javax.swing.JFrame {
         tx_DPI = new javax.swing.JTextField();
         jPanel4 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        Jc_fechaNacimiento = new com.toedter.calendar.JDateChooser();
+        Jc_fechaNacimiento = new org.netbeans.modules.form.InvalidComponent();
         bt_Buscar = new javax.swing.JButton();
         bt_limpiar = new javax.swing.JButton();
 
@@ -76,6 +76,11 @@ public class Inicio extends javax.swing.JFrame {
         tx_DPI.setForeground(new java.awt.Color(0, 0, 0));
         tx_DPI.setText("jTextField1");
         tx_DPI.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        tx_DPI.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tx_DPIActionPerformed(evt);
+            }
+        });
         jPanel1.add(tx_DPI, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, 350, 30));
 
         jPanel4.setBackground(new java.awt.Color(251, 136, 40));
@@ -90,9 +95,7 @@ public class Inicio extends javax.swing.JFrame {
 
         jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 280, 120, 40));
 
-        Jc_fechaNacimiento.setBackground(new java.awt.Color(255, 255, 255));
-        Jc_fechaNacimiento.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        Jc_fechaNacimiento.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        Jc_fechaNacimiento.null;
         jPanel1.add(Jc_fechaNacimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 420, 350, 30));
 
         bt_Buscar.setBackground(new java.awt.Color(51, 255, 0));
@@ -111,6 +114,10 @@ public class Inicio extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void tx_DPIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tx_DPIActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tx_DPIActionPerformed
 
 
     public static void main(String args[]) {
@@ -154,7 +161,7 @@ public class Inicio extends javax.swing.JFrame {
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private com.toedter.calendar.JDateChooser Jc_fechaNacimiento;
+    private org.netbeans.modules.form.InvalidComponent Jc_fechaNacimiento;
     private javax.swing.JButton bt_Buscar;
     private javax.swing.JButton bt_limpiar;
     private javax.swing.JLabel jLabel1;

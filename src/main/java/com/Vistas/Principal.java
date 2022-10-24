@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.Vistas;
+package com.vistas;
 
 /**
  *
@@ -27,21 +27,208 @@ public class Principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        jButtonVerMapa = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel = new javax.swing.JLabel();
+        lblNombreLinea = new javax.swing.JLabel();
+        lblNombreMesa = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        lblNombreLibro = new javax.swing.JLabel();
+        lblFechaNacimiento = new javax.swing.JLabel();
+        lblDepto = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jButtonRegresar = new javax.swing.JButton();
+        jPanelFoto = new javax.swing.JPanel();
+        jPanelFirma = new javax.swing.JPanel();
+        lblNombre = new javax.swing.JLabel();
+        lblDpi = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        lblNumEmpadronamiento = new javax.swing.JLabel();
+        lblMunicipio = new javax.swing.JLabel();
+        lblDireccion = new javax.swing.JLabel();
+        fondo = new javax.swing.JLabel();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(null);
+
+        jButtonVerMapa.setBackground(new java.awt.Color(0, 255, 153));
+        jButtonVerMapa.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        jButtonVerMapa.setForeground(new java.awt.Color(0, 0, 0));
+        jButtonVerMapa.setText("VER MAPA");
+        jButtonVerMapa.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButtonVerMapa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonVerMapaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonVerMapa);
+        jButtonVerMapa.setBounds(330, 500, 70, 30);
+
+        jLabel1.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("INFORMACIÓN PERSONAL");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(220, 10, 330, 30);
+
+        jLabel.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        jLabel.setText("NOMBRE DE MESA:");
+        getContentPane().add(jLabel);
+        jLabel.setBounds(290, 390, 160, 20);
+
+        lblNombreLinea.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        getContentPane().add(lblNombreLinea);
+        lblNombreLinea.setBounds(460, 450, 100, 20);
+
+        lblNombreMesa.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        getContentPane().add(lblNombreMesa);
+        lblNombreMesa.setBounds(460, 390, 100, 20);
+
+        jLabel3.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        jLabel3.setText("NOMBRE DE LÍNEA:");
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(290, 450, 160, 20);
+
+        lblNombreLibro.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        getContentPane().add(lblNombreLibro);
+        lblNombreLibro.setBounds(460, 420, 110, 20);
+
+        lblFechaNacimiento.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        getContentPane().add(lblFechaNacimiento);
+        lblFechaNacimiento.setBounds(190, 170, 190, 20);
+
+        lblDepto.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        getContentPane().add(lblDepto);
+        lblDepto.setBounds(190, 220, 170, 20);
+
+        jLabel8.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        jLabel8.setText("DPI:");
+        getContentPane().add(jLabel8);
+        jLabel8.setBounds(190, 60, 40, 20);
+
+        jLabel9.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        jLabel9.setText("NÚMERO DE EMPADRONAMIENTO:");
+        getContentPane().add(jLabel9);
+        jLabel9.setBounds(450, 220, 290, 20);
+
+        jLabel10.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        jLabel10.setText("NOMBRE DE LIBRO:");
+        getContentPane().add(jLabel10);
+        jLabel10.setBounds(290, 420, 160, 20);
+
+        jButtonRegresar.setBackground(new java.awt.Color(255, 51, 102));
+        jButtonRegresar.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        jButtonRegresar.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonRegresar.setText("Regresar");
+        jButtonRegresar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButtonRegresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonRegresarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonRegresar);
+        jButtonRegresar.setBounds(10, 10, 70, 30);
+
+        jPanelFoto.setBackground(new java.awt.Color(255, 255, 255));
+        jPanelFoto.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        javax.swing.GroupLayout jPanelFotoLayout = new javax.swing.GroupLayout(jPanelFoto);
+        jPanelFoto.setLayout(jPanelFotoLayout);
+        jPanelFotoLayout.setHorizontalGroup(
+            jPanelFotoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 128, Short.MAX_VALUE)
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+        jPanelFotoLayout.setVerticalGroup(
+            jPanelFotoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 148, Short.MAX_VALUE)
         );
+
+        getContentPane().add(jPanelFoto);
+        jPanelFoto.setBounds(40, 50, 130, 150);
+
+        jPanelFirma.setBackground(new java.awt.Color(255, 255, 255));
+        jPanelFirma.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanelFirma.setForeground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout jPanelFirmaLayout = new javax.swing.GroupLayout(jPanelFirma);
+        jPanelFirma.setLayout(jPanelFirmaLayout);
+        jPanelFirmaLayout.setHorizontalGroup(
+            jPanelFirmaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 198, Short.MAX_VALUE)
+        );
+        jPanelFirmaLayout.setVerticalGroup(
+            jPanelFirmaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 128, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(jPanelFirma);
+        jPanelFirma.setBounds(500, 80, 200, 130);
+
+        lblNombre.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        getContentPane().add(lblNombre);
+        lblNombre.setBounds(190, 120, 270, 20);
+
+        lblDpi.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        getContentPane().add(lblDpi);
+        lblDpi.setBounds(230, 60, 140, 20);
+
+        jLabel13.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        jLabel13.setText("NOMBRE COMPLETO:");
+        getContentPane().add(jLabel13);
+        jLabel13.setBounds(190, 100, 190, 20);
+
+        jLabel14.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        jLabel14.setText("FECHA DE NACIMIENTO:");
+        getContentPane().add(jLabel14);
+        jLabel14.setBounds(190, 150, 190, 20);
+
+        jLabel15.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        jLabel15.setText("DEPARTAMENTO:");
+        getContentPane().add(jLabel15);
+        jLabel15.setBounds(40, 220, 140, 20);
+
+        jLabel16.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        jLabel16.setText("MUNICIPIO:");
+        getContentPane().add(jLabel16);
+        jLabel16.setBounds(40, 250, 100, 20);
+
+        jLabel17.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        jLabel17.setText("DIRECCIÓN:");
+        getContentPane().add(jLabel17);
+        jLabel17.setBounds(40, 280, 100, 20);
+
+        lblNumEmpadronamiento.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        getContentPane().add(lblNumEmpadronamiento);
+        lblNumEmpadronamiento.setBounds(540, 240, 160, 20);
+
+        lblMunicipio.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        getContentPane().add(lblMunicipio);
+        lblMunicipio.setBounds(130, 250, 140, 20);
+
+        lblDireccion.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        getContentPane().add(lblDireccion);
+        lblDireccion.setBounds(140, 280, 510, 20);
+
+        fondo.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/Img/fondo_1.jpg"))); // NOI18N
+        getContentPane().add(fondo);
+        fondo.setBounds(0, 0, 750, 1200);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButtonVerMapaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVerMapaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonVerMapaActionPerformed
+
+    private void jButtonRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegresarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonRegresarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -79,5 +266,31 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel fondo;
+    private javax.swing.JButton jButtonRegresar;
+    private javax.swing.JButton jButtonVerMapa;
+    private javax.swing.JLabel jLabel;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanelFirma;
+    private javax.swing.JPanel jPanelFoto;
+    private javax.swing.JLabel lblDepto;
+    private javax.swing.JLabel lblDireccion;
+    private javax.swing.JLabel lblDpi;
+    private javax.swing.JLabel lblFechaNacimiento;
+    private javax.swing.JLabel lblMunicipio;
+    private javax.swing.JLabel lblNombre;
+    private javax.swing.JLabel lblNombreLibro;
+    private javax.swing.JLabel lblNombreLinea;
+    private javax.swing.JLabel lblNombreMesa;
+    private javax.swing.JLabel lblNumEmpadronamiento;
     // End of variables declaration//GEN-END:variables
 }
