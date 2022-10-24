@@ -50,6 +50,7 @@ public class Principal extends javax.swing.JFrame {
         lblNombreMesa = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         lblNombreLibro = new javax.swing.JLabel();
+        lbNombreHoja = new javax.swing.JLabel();
         lblFechaNacimiento = new javax.swing.JLabel();
         lblDepto = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
@@ -69,6 +70,7 @@ public class Principal extends javax.swing.JFrame {
         lblMunicipio = new javax.swing.JLabel();
         lblDireccion = new javax.swing.JLabel();
         lb_fondo = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -91,21 +93,24 @@ public class Principal extends javax.swing.JFrame {
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 10, 330, 30));
 
         jLabel.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jLabel.setText("NOMBRE DE MESA:");
-        getContentPane().add(jLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 390, 160, 20));
+        jLabel.setText("NUMERO DE MESA:");
+        getContentPane().add(jLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 370, 160, 20));
 
         lblNombreLinea.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        getContentPane().add(lblNombreLinea, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 450, 100, 20));
+        getContentPane().add(lblNombreLinea, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 460, 100, 20));
 
         lblNombreMesa.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        getContentPane().add(lblNombreMesa, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 390, 100, 20));
+        getContentPane().add(lblNombreMesa, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 370, 100, 20));
 
         jLabel3.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jLabel3.setText("NOMBRE DE LÍNEA:");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 450, 160, 20));
+        jLabel3.setText("NUMERO DE LÍNEA:");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 460, 160, 20));
 
         lblNombreLibro.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        getContentPane().add(lblNombreLibro, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 420, 110, 20));
+        getContentPane().add(lblNombreLibro, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 400, 110, 20));
+
+        lbNombreHoja.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        getContentPane().add(lbNombreHoja, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 430, 110, 20));
 
         lblFechaNacimiento.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         getContentPane().add(lblFechaNacimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 170, 190, 20));
@@ -122,8 +127,8 @@ public class Principal extends javax.swing.JFrame {
         getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 220, 290, 20));
 
         jLabel10.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jLabel10.setText("NOMBRE DE LIBRO:");
-        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 420, 160, 20));
+        jLabel10.setText("NUMERO DE HOJA:\n");
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 430, 160, 20));
 
         jButtonRegresar.setBackground(new java.awt.Color(255, 51, 102));
         jButtonRegresar.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
@@ -208,6 +213,10 @@ public class Principal extends javax.swing.JFrame {
         lb_fondo.setText("jLabel2");
         getContentPane().add(lb_fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(-3, -4, 750, 620));
 
+        jLabel11.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        jLabel11.setText("NUMERO DE LIBRO:");
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 400, 160, 20));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -260,6 +269,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
@@ -270,6 +280,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanelFirma;
     private javax.swing.JPanel jPanelFoto;
+    private javax.swing.JLabel lbNombreHoja;
     private javax.swing.JLabel lb_fondo;
     private javax.swing.JLabel lblDepto;
     private javax.swing.JLabel lblDireccion;

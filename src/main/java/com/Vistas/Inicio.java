@@ -43,7 +43,7 @@ public class Inicio extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         bt_Buscar = new javax.swing.JButton();
         bt_limpiar = new javax.swing.JButton();
-        bt_FechaNacimiento = new com.toedter.calendar.JDateChooser();
+        tx_FechaNacimiento = new com.toedter.calendar.JDateChooser();
         Ir_Principal = new javax.swing.JButton();
         IrMapa = new javax.swing.JButton();
         label_imagen1 = new javax.swing.JLabel();
@@ -107,8 +107,8 @@ public class Inicio extends javax.swing.JFrame {
         bt_limpiar.setText("LIMPIAR");
         jPanel1.add(bt_limpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 550, 160, 40));
 
-        bt_FechaNacimiento.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        jPanel1.add(bt_FechaNacimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 420, 350, 30));
+        tx_FechaNacimiento.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jPanel1.add(tx_FechaNacimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 420, 350, 30));
 
         Ir_Principal.setText("Ir a Principal");
         Ir_Principal.addActionListener(new java.awt.event.ActionListener() {
@@ -195,7 +195,6 @@ public class Inicio extends javax.swing.JFrame {
     private javax.swing.JButton IrMapa;
     private javax.swing.JButton Ir_Principal;
     private javax.swing.JButton bt_Buscar;
-    private com.toedter.calendar.JDateChooser bt_FechaNacimiento;
     private javax.swing.JButton bt_limpiar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -206,6 +205,7 @@ public class Inicio extends javax.swing.JFrame {
     private javax.swing.JLabel label_imagen;
     private javax.swing.JLabel label_imagen1;
     private javax.swing.JTextField tx_DPI;
+    private com.toedter.calendar.JDateChooser tx_FechaNacimiento;
     // End of variables declaration//GEN-END:variables
 
     

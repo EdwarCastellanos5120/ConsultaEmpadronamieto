@@ -226,7 +226,7 @@
             </Constraint>
           </Constraints>
         </Component>
-        <Component class="com.toedter.calendar.JDateChooser" name="bt_FechaNacimiento">
+        <Component class="com.toedter.calendar.JDateChooser" name="tx_FechaNacimiento">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Dialog" size="18" style="0"/>
