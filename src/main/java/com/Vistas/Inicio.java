@@ -20,9 +20,11 @@ public class Inicio extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(this);
         SetImageLabel(label_imagen, rutaLogo);
+        SetImageLabel(label_imagen1, rutaFondo);
     }
 
    String rutaLogo="src/main/java/com/Img/logo.png";
+   String rutaFondo="src/main/java/com/Img/fondo_1.jpg";
     
     
     
@@ -39,9 +41,12 @@ public class Inicio extends javax.swing.JFrame {
         tx_DPI = new javax.swing.JTextField();
         jPanel4 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        Jc_fechaNacimiento = new org.netbeans.modules.form.InvalidComponent();
         bt_Buscar = new javax.swing.JButton();
         bt_limpiar = new javax.swing.JButton();
+        bt_FechaNacimiento = new com.toedter.calendar.JDateChooser();
+        Ir_Principal = new javax.swing.JButton();
+        IrMapa = new javax.swing.JButton();
+        label_imagen1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -76,11 +81,6 @@ public class Inicio extends javax.swing.JFrame {
         tx_DPI.setForeground(new java.awt.Color(0, 0, 0));
         tx_DPI.setText("jTextField1");
         tx_DPI.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        tx_DPI.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tx_DPIActionPerformed(evt);
-            }
-        });
         jPanel1.add(tx_DPI, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, 350, 30));
 
         jPanel4.setBackground(new java.awt.Color(251, 136, 40));
@@ -95,9 +95,6 @@ public class Inicio extends javax.swing.JFrame {
 
         jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 280, 120, 40));
 
-        Jc_fechaNacimiento.null;
-        jPanel1.add(Jc_fechaNacimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 420, 350, 30));
-
         bt_Buscar.setBackground(new java.awt.Color(51, 255, 0));
         bt_Buscar.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         bt_Buscar.setForeground(new java.awt.Color(0, 0, 0));
@@ -110,6 +107,29 @@ public class Inicio extends javax.swing.JFrame {
         bt_limpiar.setText("LIMPIAR");
         jPanel1.add(bt_limpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 550, 160, 40));
 
+        bt_FechaNacimiento.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jPanel1.add(bt_FechaNacimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 420, 350, 30));
+
+        Ir_Principal.setText("Ir a Principal");
+        Ir_Principal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Ir_PrincipalActionPerformed(evt);
+            }
+        });
+        jPanel1.add(Ir_Principal, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 590, -1, -1));
+
+        IrMapa.setText("Ir a Mapa");
+        IrMapa.setToolTipText("");
+        IrMapa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                IrMapaActionPerformed(evt);
+            }
+        });
+        jPanel1.add(IrMapa, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 560, -1, -1));
+
+        label_imagen1.setText("jLabel1");
+        jPanel1.add(label_imagen1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 410, 640));
+
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 410, 640));
 
         pack();
@@ -118,6 +138,17 @@ public class Inicio extends javax.swing.JFrame {
     private void tx_DPIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tx_DPIActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tx_DPIActionPerformed
+
+    private void IrMapaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IrMapaActionPerformed
+       Mapa mp = new Mapa();
+       mp.setVisible(true);
+    }//GEN-LAST:event_IrMapaActionPerformed
+
+    private void Ir_PrincipalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Ir_PrincipalActionPerformed
+        Principal pr=new Principal();
+        pr.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_Ir_PrincipalActionPerformed
 
 
     public static void main(String args[]) {
@@ -161,8 +192,10 @@ public class Inicio extends javax.swing.JFrame {
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private org.netbeans.modules.form.InvalidComponent Jc_fechaNacimiento;
+    private javax.swing.JButton IrMapa;
+    private javax.swing.JButton Ir_Principal;
     private javax.swing.JButton bt_Buscar;
+    private com.toedter.calendar.JDateChooser bt_FechaNacimiento;
     private javax.swing.JButton bt_limpiar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -171,6 +204,7 @@ public class Inicio extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JLabel label_imagen;
+    private javax.swing.JLabel label_imagen1;
     private javax.swing.JTextField tx_DPI;
     // End of variables declaration//GEN-END:variables
 
