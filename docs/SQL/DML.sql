@@ -65,7 +65,7 @@ INSERT INTO tb_centrosDeVotacion VALUES
     ('EFPEM', 13),
     ('Club los Arcos', 14),
     ('Escuela Barrio Miramar', 13),
-    ('Parqueo Brasilia', 14),
+    ('Parqueo Brasilia', 14);
 
 
 --INSERTAR DATOS EN TB_MESAS
@@ -124,16 +124,16 @@ INSERT INTO tb_lineas VALUES
 
 --INSERTAR DATOS EN TB_PERSONAS
 INSERT INTO tb_personas VALUES
-    ('1234565452365', 1, 'Walver', 'Omar', 'Arana', '', 'walver-foto', 'walver-firma', '03/05/2002', 1), 
-    ('6124565452458', 2, 'Jesus', 'Antonio', 'Barrera', 'Moran', 'antonio-foto', 'antonio-firma', '04/02/2001', 11), 
-    ('3498516122454', 3, 'Jesus', 'Antonio', 'Calderas', 'Lemus', 'jesus-foto', 'jesus-firma', '11/10/2001', 3, 3), 
-    ('8378517542442', 4, 'Edwar', 'Alejandro', 'Castellanos', 'Portillo', 'edwar-foto', 'edwar-firma', '14/01/2001', 4), 
-    ('9638527411454', 5, 'Linda', 'Daniela', 'Castillo', 'Giron', 'daniela-foto', 'daniela-firma', '07/06/2002', 5), 
-    ('1598516122951', 6, 'Steven', 'Rene', 'Garcia', 'Payes', 'steven-foto', 'steven-firma', '14/12/2001', 6), 
-    ('3578526122753', 7, 'Victor', 'Daniel', 'Hernandez', 'Cruz', 'victor-foto', 'victor-firma', '11/09/2002', 7), 
-    ('6499436122617', 8, 'Jorge', 'Alfonso', 'Lopez', 'Garcia', 'jorge-foto', 'jorge-firma', '24/10/2001', 8), 
-    ('7541236122321', 9, 'Cristian', 'Eli', 'Luna', '', 'cristian-foto', 'cristian-firma', '16/12/2001', 9), 
-    ('2248876122663', 10, 'Steven', 'Oswaldo', 'Ramos', 'Hernandez', 'oswaldo-foto', 'oswaldo-firma', '01/02/2001', 10);
+    ('1234565452365', 1, 'Walver', 'Omar', 'Arana', '', 'walver-foto', 'walver-firma', '2002-05-03', 1),
+    ('6124565452458', 2, 'Jesus', 'Antonio', 'Barrera', 'Moran', 'antonio-foto', 'antonio-firma', '2001-04-02', 11),
+    ('3498516122454', 3, 'Jesus', 'Antonio', 'Calderas', 'Lemus', 'jesus-foto', 'jesus-firma', '2001-10-11', 3),
+    ('8378517542442', 4, 'Edwar', 'Alejandro', 'Castellanos', 'Portillo', 'edwar-foto', 'edwar-firma', '2001-01-14', 4),
+    ('9638527411454', 5, 'Linda', 'Daniela', 'Castillo', 'Giron', 'daniela-foto', 'daniela-firma', '2002-07-06', 5),
+    ('1598516122951', 6, 'Steven', 'Rene', 'Garcia', 'Payes', 'steven-foto', 'steven-firma', '2001-12-16', 6),
+    ('3578526122753', 7, 'Victor', 'Daniel', 'Hernandez', 'Cruz', 'victor-foto', 'victor-firma', '2002-09-11', 7),
+    ('6499436122617', 8, 'Jorge', 'Alfonso', 'Lopez', 'Garcia', 'jorge-foto', 'jorge-firma', '2001-10-24', 8),
+    ('7541236122321', 9, 'Cristian', 'Eli', 'Luna', '', 'cristian-foto', 'cristian-firma', '2001-10-24', 9),
+    ('2248876122663', 10, 'Steven', 'Oswaldo', 'Ramos', 'Hernandez', 'oswaldo-foto', 'oswaldo-firma', '2001-12-16', 10);
 
 --INSERTAR DATOS EN TB_FIRMAS
 INSERT INTO tb_firmas VALUES
