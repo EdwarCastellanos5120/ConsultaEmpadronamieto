@@ -97,6 +97,18 @@ public class Direccion {
     public void setMunicipio(Municipio municipio) {
         this.municipio = municipio;
     }
-   
-   
+
+    @Override
+    public String toString() {
+        return "Direccion{" +
+                "codigo=" + codigo +
+                ", longitud=" + longitud +
+                ", latitud=" + latitud +
+                ", zona=" + zona +
+                ", calle=" + calle +
+                ", avenida=" + avenida +
+                ", casa=" + casa +
+                ", municipio=" + municipio +
+                '}';
+    }
 }

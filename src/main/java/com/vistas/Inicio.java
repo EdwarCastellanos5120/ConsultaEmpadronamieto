@@ -5,6 +5,8 @@
  */
 package com.vistas;
 
+import com.modelos.Persona;
+
 import java.awt.Image;
 import javax.swing.*;
 

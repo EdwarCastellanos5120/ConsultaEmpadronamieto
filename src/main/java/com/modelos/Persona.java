@@ -130,4 +130,20 @@ public class Persona {
         this.direccion = direccion;
     }
 
+    @Override
+    public String toString() {
+        return "Persona{" +
+                "codigo=" + codigo +
+                ", dpi='" + dpi + '\'' +
+                ", padron=" + padron +
+                ", nombre1='" + nombre1 + '\'' +
+                ", nombre2='" + nombre2 + '\'' +
+                ", apellido1='" + apellido1 + '\'' +
+                ", apellido2='" + apellido2 + '\'' +
+                ", foto='" + foto + '\'' +
+                ", firma='" + firma + '\'' +
+                ", fechaDeNacimiento=" + fechaDeNacimiento +
+                ", direccion=" + direccion +
+                '}';
+    }
 }

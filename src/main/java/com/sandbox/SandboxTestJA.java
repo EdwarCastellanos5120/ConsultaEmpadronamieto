@@ -1,8 +1,13 @@
 package com.sandbox;
 
+import com.accesoDatos.ConsultaPersona;
+import com.modelos.Firma;
+import com.modelos.Persona;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -28,6 +33,16 @@ public class SandboxTestJA {
             LOGGER.log(Level.SEVERE,"No se ha podido establecer la conexion a la instancia de Azure",e);
         }
 
+
+        ConsultaPersona consultaPersona = new ConsultaPersona();
+
+        Persona persona = new Persona();
+        persona.setDpi("3422501832201");
+        persona.setFechaDeNacimiento(new Date());
+
+        Firma firma = consultaPersona.buscarPersona(persona);
+
+        System.out.println(firma.toString());
 
 
     }

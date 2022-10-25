@@ -38,4 +38,11 @@ public class Firma {
         this.linea = linea;
     }
 
+    @Override
+    public String toString() {
+        return "Firma{" +
+                "persona=" + persona +
+                ", linea=" + linea +
+                '}';
+    }
 }
