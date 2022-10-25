@@ -9,6 +9,7 @@ import java.awt.Image;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 /**
  *
@@ -23,6 +24,7 @@ public class Principal extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(this);
         SetImageLabel(lb_fondo, rutaFondo);
+        //SetImageLabel(lb_fotopersona, rutaFondo);
     }
 
        String rutaFondo="src/main/java/com/Img/fondo_1.jpg";
@@ -33,7 +35,11 @@ public class Principal extends javax.swing.JFrame {
         image.getImage().getScaledInstance(label.getWidth(), label.getHeight(), Image.SCALE_DEFAULT));
         label.setIcon(icon);
         this.repaint();
-    }
+        }
+       
+        
+        
+        
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -58,7 +64,9 @@ public class Principal extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         jButtonRegresar = new javax.swing.JButton();
         jPanelFoto = new javax.swing.JPanel();
+        lb_fotopersona = new javax.swing.JLabel();
         jPanelFirma = new javax.swing.JPanel();
+        lb_fotofirma = new javax.swing.JLabel();
         lblNombre = new javax.swing.JLabel();
         lblDpi = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
@@ -75,17 +83,17 @@ public class Principal extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButtonVerMapa.setBackground(new java.awt.Color(0, 255, 153));
-        jButtonVerMapa.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        jButtonVerMapa.setBackground(new java.awt.Color(102, 255, 102));
+        jButtonVerMapa.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         jButtonVerMapa.setForeground(new java.awt.Color(0, 0, 0));
         jButtonVerMapa.setText("VER MAPA");
-        jButtonVerMapa.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButtonVerMapa.setBorder(null);
         jButtonVerMapa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonVerMapaActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonVerMapa, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 500, 70, 30));
+        getContentPane().add(jButtonVerMapa, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 530, 170, 50));
 
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -93,129 +101,151 @@ public class Principal extends javax.swing.JFrame {
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 10, 330, 30));
 
         jLabel.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        jLabel.setForeground(new java.awt.Color(255, 153, 102));
         jLabel.setText("NUMERO DE MESA:");
-        getContentPane().add(jLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 370, 160, 20));
+        getContentPane().add(jLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 380, 160, 20));
 
         lblNombreLinea.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        getContentPane().add(lblNombreLinea, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 460, 100, 20));
+        lblNombreLinea.setForeground(new java.awt.Color(255, 255, 255));
+        lblNombreLinea.setText("LB LINEA");
+        getContentPane().add(lblNombreLinea, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 470, 100, 20));
 
         lblNombreMesa.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        getContentPane().add(lblNombreMesa, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 370, 100, 20));
+        lblNombreMesa.setForeground(new java.awt.Color(255, 255, 255));
+        lblNombreMesa.setText("LB MESA");
+        getContentPane().add(lblNombreMesa, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 380, 100, 20));
 
         jLabel3.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 153, 102));
         jLabel3.setText("NUMERO DE LÍNEA:");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 460, 160, 20));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 470, 160, 20));
 
         lblNombreLibro.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        getContentPane().add(lblNombreLibro, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 400, 110, 20));
+        lblNombreLibro.setForeground(new java.awt.Color(255, 255, 255));
+        lblNombreLibro.setText("LB LIBRO");
+        getContentPane().add(lblNombreLibro, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 410, 110, 20));
 
         lbNombreHoja.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        getContentPane().add(lbNombreHoja, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 430, 110, 20));
+        lbNombreHoja.setForeground(new java.awt.Color(255, 255, 255));
+        lbNombreHoja.setText("LB HOJA");
+        getContentPane().add(lbNombreHoja, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 440, 110, 20));
 
         lblFechaNacimiento.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        getContentPane().add(lblFechaNacimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 170, 190, 20));
+        lblFechaNacimiento.setForeground(new java.awt.Color(255, 255, 255));
+        lblFechaNacimiento.setText("FECHA LB");
+        getContentPane().add(lblFechaNacimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 150, 190, 20));
 
+        lblDepto.setBackground(new java.awt.Color(255, 255, 255));
         lblDepto.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        getContentPane().add(lblDepto, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 220, 170, 20));
+        lblDepto.setForeground(new java.awt.Color(255, 255, 255));
+        lblDepto.setText("DEPARTAMENTO LB");
+        getContentPane().add(lblDepto, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 180, 170, 20));
 
         jLabel8.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 153, 102));
         jLabel8.setText("DPI:");
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 60, 40, 20));
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 90, 40, 20));
 
         jLabel9.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jLabel9.setText("NÚMERO DE EMPADRONAMIENTO:");
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 220, 290, 20));
+        jLabel9.setForeground(new java.awt.Color(255, 153, 102));
+        jLabel9.setText("NÚMERO DE \nEMPADRONAMIENTO:");
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 320, 290, 20));
 
         jLabel10.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 153, 102));
         jLabel10.setText("NUMERO DE HOJA:\n");
-        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 430, 160, 20));
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 440, 160, 20));
 
-        jButtonRegresar.setBackground(new java.awt.Color(255, 51, 102));
-        jButtonRegresar.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
-        jButtonRegresar.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonRegresar.setBackground(new java.awt.Color(255, 102, 102));
+        jButtonRegresar.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jButtonRegresar.setForeground(new java.awt.Color(0, 0, 0));
         jButtonRegresar.setText("Regresar");
-        jButtonRegresar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButtonRegresar.setBorder(null);
         jButtonRegresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonRegresarActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 70, 30));
+        getContentPane().add(jButtonRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 110, 40));
 
         jPanelFoto.setBackground(new java.awt.Color(255, 255, 255));
         jPanelFoto.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanelFoto.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout jPanelFotoLayout = new javax.swing.GroupLayout(jPanelFoto);
-        jPanelFoto.setLayout(jPanelFotoLayout);
-        jPanelFotoLayout.setHorizontalGroup(
-            jPanelFotoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 128, Short.MAX_VALUE)
-        );
-        jPanelFotoLayout.setVerticalGroup(
-            jPanelFotoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 148, Short.MAX_VALUE)
-        );
+        lb_fotopersona.setText("foto_persona");
+        jPanelFoto.add(lb_fotopersona, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 210, 230));
 
-        getContentPane().add(jPanelFoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, -1, -1));
+        getContentPane().add(jPanelFoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 210, 230));
 
         jPanelFirma.setBackground(new java.awt.Color(255, 255, 255));
         jPanelFirma.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanelFirma.setForeground(new java.awt.Color(255, 255, 255));
+        jPanelFirma.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout jPanelFirmaLayout = new javax.swing.GroupLayout(jPanelFirma);
-        jPanelFirma.setLayout(jPanelFirmaLayout);
-        jPanelFirmaLayout.setHorizontalGroup(
-            jPanelFirmaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 198, Short.MAX_VALUE)
-        );
-        jPanelFirmaLayout.setVerticalGroup(
-            jPanelFirmaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 128, Short.MAX_VALUE)
-        );
+        lb_fotofirma.setText("foto_firma");
+        jPanelFirma.add(lb_fotofirma, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 280, 160));
 
-        getContentPane().add(jPanelFirma, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 80, -1, -1));
+        getContentPane().add(jPanelFirma, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 330, 280, 160));
 
         lblNombre.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        getContentPane().add(lblNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 120, 270, 20));
+        lblNombre.setForeground(new java.awt.Color(255, 255, 255));
+        lblNombre.setText("NOMBRE LB");
+        getContentPane().add(lblNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 120, 270, 20));
 
         lblDpi.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        getContentPane().add(lblDpi, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 60, 140, 20));
+        lblDpi.setForeground(new java.awt.Color(255, 255, 255));
+        lblDpi.setText("DPI LABEL");
+        getContentPane().add(lblDpi, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 90, 140, 20));
 
         jLabel13.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(255, 153, 102));
         jLabel13.setText("NOMBRE COMPLETO:");
-        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 100, 190, 20));
+        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 120, 190, 20));
 
         jLabel14.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(255, 153, 102));
         jLabel14.setText("FECHA DE NACIMIENTO:");
-        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 150, 200, 20));
+        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 150, 200, 20));
 
         jLabel15.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(255, 153, 102));
         jLabel15.setText("DEPARTAMENTO:");
-        getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, 150, 20));
+        getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 180, 150, 20));
 
         jLabel16.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(255, 153, 102));
         jLabel16.setText("MUNICIPIO:");
-        getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, 100, 20));
+        getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 210, 100, 20));
 
         jLabel17.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(255, 153, 102));
         jLabel17.setText("DIRECCIÓN:");
-        getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, 100, 20));
+        getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 240, 100, 20));
 
         lblNumEmpadronamiento.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        getContentPane().add(lblNumEmpadronamiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 240, 160, 20));
+        lblNumEmpadronamiento.setForeground(new java.awt.Color(255, 255, 255));
+        lblNumEmpadronamiento.setText("EMPADRONO LB");
+        getContentPane().add(lblNumEmpadronamiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 340, 160, 20));
 
+        lblMunicipio.setBackground(new java.awt.Color(255, 255, 255));
         lblMunicipio.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        getContentPane().add(lblMunicipio, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 250, 140, 20));
+        lblMunicipio.setForeground(new java.awt.Color(255, 255, 255));
+        lblMunicipio.setText("MUNICIPIO LB");
+        getContentPane().add(lblMunicipio, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 210, 140, 20));
 
+        lblDireccion.setBackground(new java.awt.Color(255, 255, 255));
         lblDireccion.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        getContentPane().add(lblDireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 280, 510, 20));
+        lblDireccion.setForeground(new java.awt.Color(255, 255, 255));
+        lblDireccion.setText("DIRECCION LB");
+        getContentPane().add(lblDireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 260, 500, 20));
 
         jLabel11.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 153, 102));
         jLabel11.setText("NUMERO DE LIBRO:");
-        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 400, 160, 20));
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 410, 160, 20));
 
         lb_fondo.setText("jLabel2");
-        getContentPane().add(lb_fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(-3, -4, 750, 620));
+        getContentPane().add(lb_fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 750, 620));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -282,6 +312,8 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanelFoto;
     private javax.swing.JLabel lbNombreHoja;
     private javax.swing.JLabel lb_fondo;
+    private javax.swing.JLabel lb_fotofirma;
+    private javax.swing.JLabel lb_fotopersona;
     private javax.swing.JLabel lblDepto;
     private javax.swing.JLabel lblDireccion;
     private javax.swing.JLabel lblDpi;
