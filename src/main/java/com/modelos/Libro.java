@@ -2,22 +2,22 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.Modelos;
+package com.modelos;
 
 /**
  *
  * @author linda
  */
-public class Mesa {
+public class Libro {
     private int codigo;
-    private CentroDeVotacion centroVotacion;
+    private Mesa mesa;
 
-    public Mesa(int codigo, CentroDeVotacion centroVotacion) {
+    public Libro(int codigo, Mesa mesa) {
         this.codigo = codigo;
-        this.centroVotacion = centroVotacion;
+        this.mesa = mesa;
     }
 
-    public Mesa(){
+    public Libro(){
         
     }
     
@@ -29,13 +29,14 @@ public class Mesa {
         this.codigo = codigo;
     }
 
-    public CentroDeVotacion getCentroVotacion() {
-        return centroVotacion;
+    public Mesa getMesa() {
+        return mesa;
     }
 
-    public void setCentroVotacion(CentroDeVotacion centroVotacion) {
-        this.centroVotacion = centroVotacion;
+    public void setMesa(Mesa mesa) {
+        this.mesa = mesa;
     }
-
-
+    
+    
+    
 }

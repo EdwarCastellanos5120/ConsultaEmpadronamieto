@@ -2,22 +2,22 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.Modelos;
+package com.modelos;
 
 /**
  *
  * @author linda
  */
-public class Departamento {
+public class Hoja {
     private int codigo;
-    private String nombre;
+    private Libro libro;
 
-    public Departamento(int codigo, String nombre) {
+    public Hoja(int codigo, Libro libro) {
         this.codigo = codigo;
-        this.nombre = nombre;
+        this.libro = libro;
     }
 
-    public Departamento(){
+    public Hoja(){
         
     }
     
@@ -29,12 +29,12 @@ public class Departamento {
         this.codigo = codigo;
     }
 
-    public String getNombre() {
-        return nombre;
+    public Libro getLibro() {
+        return libro;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setLibro(Libro libro) {
+        this.libro = libro;
     }
     
     

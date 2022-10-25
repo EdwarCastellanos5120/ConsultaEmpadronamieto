@@ -22,7 +22,7 @@ public class Principal extends javax.swing.JFrame {
     public Principal() {
         initComponents();
         setLocationRelativeTo(this);
-     SetImageLabel(lb_fondo, rutaFondo);
+        SetImageLabel(lb_fondo, rutaFondo);
     }
 
        String rutaFondo="src/main/java/com/Img/fondo_1.jpg";
