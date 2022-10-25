@@ -95,10 +95,10 @@ public class Principal extends javax.swing.JFrame {
         });
         getContentPane().add(jButtonVerMapa, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 530, 170, 50));
 
-        jLabel1.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Dialog", 3, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("INFORMACIÓN PERSONAL");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 10, 330, 30));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 10, 480, 30));
 
         jLabel.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel.setForeground(new java.awt.Color(255, 153, 102));
