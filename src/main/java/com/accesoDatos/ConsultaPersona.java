@@ -1,10 +1,11 @@
 package com.accesoDatos;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import com.conexiones.ConexionSQLServer;
 import com.modelos.*;
-
-import javax.swing.*;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 /**
  * @author Jorge A. López
@@ -12,44 +13,108 @@ import java.util.Date;
  * @created 10-24-2022 - 8:38 PM
  */
 public class ConsultaPersona {
-    public Firma buscarPersona(Persona persona){
 
-        Departamento departamento = new Departamento(1,"Jutiapa");
-        Municipio municipio = new Municipio(1,"Jutiapa",departamento);
-        Direccion direccion = new Direccion(1, (float) 34.343,(float)234.233,2,1,4,5,municipio);
+    private static final String CONSULTA = "SELECT * "
+            + "FROM dbo.tb_personas p "
+            + "JOIN dbo.tb_firmas f "
+                + "ON p.persona_codigo = f.persona_codigo "
+            + "JOIN dbo.tb_lineas l "
+                + "ON f.linea_codigo = l.linea_codigo "
+            + "JOIN dbo.tb_hojas h "
+                + "ON l.hoja_codigo = h.hoja_codigo "
+            + "JOIN dbo.tb_libros lb "
+                + "ON h.libro_codigo = lb.libro_codigo "
+            + "JOIN dbo.tb_mesas m "
+                + "ON lb.mesa_codigo = m.mesa_codigo "
+            + "JOIN dbo.tb_centrosDeVotacion cv "
+                + "ON m.centroDeVotacion_codigo = cv.centroDeVotacion_codigo "
+            + "JOIN dbo.tb_direcciones d "
+                + "ON cv.direccion_codigo = d.direccion_codigo "
+            + "JOIN dbo.tb_municipios mu "
+                + "ON d.municipio_codigo = mu.municipio_codigo "
+            + "JOIN dbo.tb_departamentos dep "
+                + "ON mu.departamento_codigo = dep.departamento_codigo "
+            + "WHERE p.persona_dpi=?;";
 
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-        sdf.format(new Date());
-
-
-        if(persona.getDpi() == "3422501832201"){
-            System.out.println("Se encontro la persona");
-
-            persona.setCodigo(1);
-            persona.setPadron(10);
-            persona.setNombre1("Jorge");
-            persona.setNombre2("Alfonso");
-            persona.setApellido1("Lopez");
-            persona.setApellido2("Garcia");
-            persona.setFoto("jorge-foto");
-            persona.setFirma("firma-jorge");
-            persona.setDireccion(direccion);
-
-            JOptionPane.showMessageDialog(null,"Se ha encontrado la persona");
-            System.out.println(persona.toString());
-
-        } else {
-            JOptionPane.showMessageDialog(null,"No se ha encontrado la persona");
+    public Firma buscarPersona(Persona solicitante){
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        Firma firma = null;
+        try {
+            conn = ConexionSQLServer.getConnection();
+            stmt = conn.prepareStatement(CONSULTA);
+            stmt.setString(1, solicitante.getDpi());
+            System.out.println("Ejecutando consulta: " + CONSULTA);
+            rs = stmt.executeQuery();
+            while (rs.next()) {
+                if (solicitante.getDpi().equals(rs.getString("persona_dpi"))
+                    && solicitante.getFechaDeNacimiento() == rs.getDate("persona_fechaDeNacimiento")
+                )
+                {
+                    Departamento departamento = new Departamento(
+                            rs.getInt("departamento_codigo"),
+                            rs.getString("departamento_nombre")
+                    );
+                    Municipio municipio = new Municipio(
+                            rs.getInt("municipio_codigo"),
+                            rs.getString("municipio_nombre"),
+                            departamento
+                    );
+                    Direccion direccion = new Direccion(
+                            rs.getInt("direccion_codigo"),
+                            rs.getFloat("direccion_longitud"),
+                            rs.getFloat("direccion_latitud"),
+                            rs.getInt("direccion_zona"),
+                            rs.getInt("direccion_calle"),
+                            rs.getInt("direccion_avenida"),
+                            rs.getInt("direccion_casa"),
+                            municipio
+                    );
+                    Persona persona = new Persona(
+                            rs.getInt("persona_codigo"),
+                            rs.getString("persona_dpi"),
+                            rs.getInt("persona_padron"),
+                            rs.getString("persona_nombre1"),
+                            rs.getString("persona_nombre2"),
+                            rs.getString("persona_apellido1"),
+                            rs.getString("persona_apellido2"),
+                            rs.getString("persona_foto"),
+                            rs.getString("persona_firma"),
+                            rs.getDate("persona_fechaDeNacimiento"),
+                            direccion
+                    );
+                    CentroDeVotacion centroDeVotacion = new CentroDeVotacion(
+                            rs.getInt("centroDeVotacion_codigo"),
+                            rs.getString("centroDeVotacion_nombre"),
+                            direccion
+                    );
+                    Mesa mesa = new Mesa(
+                            rs.getInt("mesa_codigo"),
+                            centroDeVotacion
+                    );
+                    Libro libro = new Libro(
+                            rs.getInt("libro_codigo"),
+                            mesa
+                    );
+                    Hoja hoja = new Hoja(
+                            rs.getInt("hoja_codigo"),
+                            libro
+                    );
+                    Linea linea = new Linea(
+                            rs.getInt("linea_codigo"),
+                            hoja
+                    );
+                    firma = new Firma(persona, linea);
+                }
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace(System.out);
+        } finally {
+            ConexionSQLServer.close(conn);
+            ConexionSQLServer.close(stmt);
+            ConexionSQLServer.close(rs);
         }
-
-
-        CentroDeVotacion centroDeVotacion = new CentroDeVotacion(1,"Centro de Votacion UMG",direccion);
-        Mesa mesa = new Mesa(1,centroDeVotacion);
-        Libro libro = new Libro(1,mesa);
-        Hoja hoja = new Hoja(1,libro);
-        Linea linea = new Linea(1,hoja);
-
-
-        return new Firma(persona, linea);
+        return firma;
     }
 }
