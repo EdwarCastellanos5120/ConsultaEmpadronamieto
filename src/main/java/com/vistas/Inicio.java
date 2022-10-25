@@ -25,11 +25,16 @@ public class Inicio extends javax.swing.JFrame {
         setLocationRelativeTo(this);
         SetImageLabel(label_imagen, rutaLogo);
         SetImageLabel(label_imagen1, rutaFondo);
+        SetImageLabel(lb_dpi, rutaDPI);
+        SetImageLabel(lb_calendario, rutaCalendario);
     }
 
-   String rutaLogo="src/main/java/com/Img/logo.png";
-   String rutaFondo="src/main/java/com/Img/fondo_1.jpg";
-
+   String rutaLogo="src/main/java/com/Img/logo.png",
+    rutaFondo="src/main/java/com/Img/fondo_1.jpg",
+    rutaDPI="src/main/java/com/Img/dpi.png",
+    rutaCalendario="src/main/java/com/Img/calendario.png";
+   
+           
     
     
     
@@ -39,20 +44,22 @@ public class Inicio extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
+        jPanel5 = new javax.swing.JPanel();
         label_imagen = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        tx_DPI = new javax.swing.JTextField();
         jPanel4 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
+        lb_dpi = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        tx_DPI = new javax.swing.JTextField();
+        jPanel6 = new javax.swing.JPanel();
+        lb_calendario = new javax.swing.JLabel();
+        tx_FechaNacimiento = new com.toedter.calendar.JDateChooser();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         bt_Buscar = new javax.swing.JButton();
         bt_limpiar = new javax.swing.JButton();
-        tx_FechaNacimiento = new com.toedter.calendar.JDateChooser();
-        Ir_Principal = new javax.swing.JButton();
-        IrMapa = new javax.swing.JButton();
+        jPanel7 = new javax.swing.JPanel();
         label_imagen1 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -61,47 +68,66 @@ public class Inicio extends javax.swing.JFrame {
         jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel3.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED, new java.awt.Color(44, 128, 191), new java.awt.Color(44, 128, 191), new java.awt.Color(44, 128, 191), new java.awt.Color(44, 128, 191)));
-        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel5.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        label_imagen.setText("jLabel1");
-        jPanel3.add(label_imagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 350, 220));
+        label_imagen.setText("logo");
+        jPanel5.add(label_imagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 370, 90));
 
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 370, 240));
+        jPanel1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 410, 110));
 
-        jPanel2.setBackground(new java.awt.Color(251, 136, 40));
-        jPanel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel1.setFont(new java.awt.Font("Dialog", 1, 27)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel1.setText("FECHA NACIMIENTO");
-        jLabel1.setToolTipText("");
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 280, 40));
-
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 380, 300, 40));
-
-        tx_DPI.setBackground(new java.awt.Color(255, 255, 255));
-        tx_DPI.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        tx_DPI.setForeground(new java.awt.Color(0, 0, 0));
-        tx_DPI.setText("jTextField1");
-        tx_DPI.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanel1.add(tx_DPI, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, 350, 30));
-
-        jPanel4.setBackground(new java.awt.Color(251, 136, 40));
-        jPanel4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setFont(new java.awt.Font("Dialog", 1, 27)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Dubai", 1, 48)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel2.setText("DPI");
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("BIENVENIDO");
         jLabel2.setToolTipText("");
-        jPanel4.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 0, 70, 40));
+        jPanel4.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 0, 280, 40));
 
-        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 280, 120, 40));
+        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 340, 40));
 
-        bt_Buscar.setBackground(new java.awt.Color(51, 255, 0));
+        lb_dpi.setText("dpi");
+        jPanel1.add(lb_dpi, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 100, 110));
+
+        jPanel2.setBackground(new java.awt.Color(255, 153, 51));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 400, 280, 10));
+
+        tx_DPI.setBackground(new java.awt.Color(255, 255, 255));
+        tx_DPI.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        tx_DPI.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(tx_DPI, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 230, 280, 40));
+
+        jPanel6.setBackground(new java.awt.Color(255, 153, 51));
+        jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel1.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 280, 280, 10));
+
+        lb_calendario.setText("calendario");
+        jPanel1.add(lb_calendario, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 330, 90, 80));
+
+        tx_FechaNacimiento.setDateFormatString("dd-MM-yyyy\n");
+        tx_FechaNacimiento.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jPanel1.add(tx_FechaNacimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 350, 280, 40));
+
+        jLabel1.setFont(new java.awt.Font("Dubai", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Seleccionar Fecha Nacimiento");
+        jLabel1.setToolTipText("");
+        jLabel1.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 410, 220, -1));
+
+        jLabel3.setFont(new java.awt.Font("Dubai", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel3.setText("Ingresar Numero de Identificacion\n");
+        jLabel3.setToolTipText("");
+        jLabel3.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 290, 220, -1));
+
+        bt_Buscar.setBackground(new java.awt.Color(102, 255, 102));
         bt_Buscar.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         bt_Buscar.setForeground(new java.awt.Color(0, 0, 0));
         bt_Buscar.setText("BUSCAR");
@@ -110,41 +136,22 @@ public class Inicio extends javax.swing.JFrame {
                 bt_BuscarActionPerformed(evt);
             }
         });
-        jPanel1.add(bt_Buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 490, 160, 40));
+        jPanel1.add(bt_Buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 450, 160, 40));
 
-        bt_limpiar.setBackground(new java.awt.Color(255, 255, 0));
+        bt_limpiar.setBackground(new java.awt.Color(255, 255, 102));
         bt_limpiar.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         bt_limpiar.setForeground(new java.awt.Color(0, 0, 0));
         bt_limpiar.setText("LIMPIAR");
-        jPanel1.add(bt_limpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 550, 160, 40));
+        jPanel1.add(bt_limpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 500, 160, 40));
 
-        tx_FechaNacimiento.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        jPanel1.add(tx_FechaNacimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 420, 350, 30));
-
-        Ir_Principal.setText("Ir a Principal");
-        Ir_Principal.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Ir_PrincipalActionPerformed(evt);
-            }
-        });
-        jPanel1.add(Ir_Principal, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 590, -1, -1));
-
-        IrMapa.setText("Ir a Mapa");
-        IrMapa.setToolTipText("");
-        IrMapa.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                IrMapaActionPerformed(evt);
-            }
-        });
-        jPanel1.add(IrMapa, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 560, -1, -1));
+        jPanel7.setBackground(new java.awt.Color(255, 153, 51));
+        jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel1.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 550, 390, 10));
 
         label_imagen1.setText("jLabel1");
-        jPanel1.add(label_imagen1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 410, 640));
+        jPanel1.add(label_imagen1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 410, 580));
 
-        jLabel3.setText("jLabel3");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 460, 150, -1));
-
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 410, 640));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 410, 580));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -152,17 +159,6 @@ public class Inicio extends javax.swing.JFrame {
     private void tx_DPIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tx_DPIActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tx_DPIActionPerformed
-
-    private void IrMapaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IrMapaActionPerformed
-       Mapa mp = new Mapa();
-       mp.setVisible(true);
-    }//GEN-LAST:event_IrMapaActionPerformed
-
-    private void Ir_PrincipalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Ir_PrincipalActionPerformed
-        Principal pr=new Principal();
-        pr.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_Ir_PrincipalActionPerformed
 
     private void bt_BuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_BuscarActionPerformed
 
@@ -208,10 +204,15 @@ public class Inicio extends javax.swing.JFrame {
         label.setIcon(icon);
         this.repaint();
     }
+     private void SetImageBoton(JButton button, String path){
+        ImageIcon image = new ImageIcon(path);
+        Icon icon = new ImageIcon(
+        image.getImage().getScaledInstance(button.getWidth(), button.getHeight(), Image.SCALE_DEFAULT));
+        button.setIcon(icon);
+        this.repaint();
+    }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton IrMapa;
-    private javax.swing.JButton Ir_Principal;
     private javax.swing.JButton bt_Buscar;
     private javax.swing.JButton bt_limpiar;
     private javax.swing.JLabel jLabel1;
@@ -219,10 +220,14 @@ public class Inicio extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
     private javax.swing.JLabel label_imagen;
     private javax.swing.JLabel label_imagen1;
+    private javax.swing.JLabel lb_calendario;
+    private javax.swing.JLabel lb_dpi;
     private javax.swing.JTextField tx_DPI;
     private com.toedter.calendar.JDateChooser tx_FechaNacimiento;
     // End of variables declaration//GEN-END:variables
