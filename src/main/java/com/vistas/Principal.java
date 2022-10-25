@@ -69,8 +69,8 @@ public class Principal extends javax.swing.JFrame {
         lblNumEmpadronamiento = new javax.swing.JLabel();
         lblMunicipio = new javax.swing.JLabel();
         lblDireccion = new javax.swing.JLabel();
-        lb_fondo = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
+        lb_fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -187,11 +187,11 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel14.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel14.setText("FECHA DE NACIMIENTO:");
-        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 150, 190, 20));
+        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 150, 200, 20));
 
         jLabel15.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel15.setText("DEPARTAMENTO:");
-        getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, 140, 20));
+        getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, 150, 20));
 
         jLabel16.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel16.setText("MUNICIPIO:");
@@ -210,12 +210,12 @@ public class Principal extends javax.swing.JFrame {
         lblDireccion.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         getContentPane().add(lblDireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 280, 510, 20));
 
-        lb_fondo.setText("jLabel2");
-        getContentPane().add(lb_fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(-3, -4, 750, 620));
-
         jLabel11.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel11.setText("NUMERO DE LIBRO:");
         getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 400, 160, 20));
+
+        lb_fondo.setText("jLabel2");
+        getContentPane().add(lb_fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(-3, -4, 750, 620));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

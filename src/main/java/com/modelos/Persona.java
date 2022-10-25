@@ -38,6 +38,13 @@ public class Persona {
         this.direccion = direccion;
     }
 
+    public Persona(String dpi, Date fechaDeNacimiento) {
+        this.dpi = dpi;
+        this.fechaDeNacimiento = fechaDeNacimiento;
+    }
+
+    
+    
     public Persona() {
 
     }

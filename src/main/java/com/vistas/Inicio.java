@@ -5,7 +5,10 @@
  */
 package com.vistas;
 
+
 import java.awt.Image;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import javax.swing.*;
 
 /**
@@ -25,6 +28,7 @@ public class Inicio extends javax.swing.JFrame {
 
    String rutaLogo="src/main/java/com/Img/logo.png";
    String rutaFondo="src/main/java/com/Img/fondo_1.jpg";
+
     
     
     
@@ -47,6 +51,7 @@ public class Inicio extends javax.swing.JFrame {
         Ir_Principal = new javax.swing.JButton();
         IrMapa = new javax.swing.JButton();
         label_imagen1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -99,6 +104,11 @@ public class Inicio extends javax.swing.JFrame {
         bt_Buscar.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         bt_Buscar.setForeground(new java.awt.Color(0, 0, 0));
         bt_Buscar.setText("BUSCAR");
+        bt_Buscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_BuscarActionPerformed(evt);
+            }
+        });
         jPanel1.add(bt_Buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 490, 160, 40));
 
         bt_limpiar.setBackground(new java.awt.Color(255, 255, 0));
@@ -130,6 +140,9 @@ public class Inicio extends javax.swing.JFrame {
         label_imagen1.setText("jLabel1");
         jPanel1.add(label_imagen1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 410, 640));
 
+        jLabel3.setText("jLabel3");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 460, 150, -1));
+
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 410, 640));
 
         pack();
@@ -149,6 +162,10 @@ public class Inicio extends javax.swing.JFrame {
         pr.setVisible(true);
         dispose();
     }//GEN-LAST:event_Ir_PrincipalActionPerformed
+
+    private void bt_BuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_BuscarActionPerformed
+
+    }//GEN-LAST:event_bt_BuscarActionPerformed
 
 
     public static void main(String args[]) {
@@ -198,6 +215,7 @@ public class Inicio extends javax.swing.JFrame {
     private javax.swing.JButton bt_limpiar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
