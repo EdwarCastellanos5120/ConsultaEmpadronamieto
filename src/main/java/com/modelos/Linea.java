@@ -36,5 +36,12 @@ public class Linea {
     public void setHoja(Hoja hoja) {
         this.hoja = hoja;
     }
-    
+
+    @Override
+    public String toString() {
+        return "Linea{" +
+                "codigo=" + codigo +
+                ", hoja=" + hoja +
+                '}';
+    }
 }

@@ -5,6 +5,10 @@
  */
 package com.vistas;
 
+<<<<<<< HEAD
+=======
+import com.modelos.Persona;
+>>>>>>> abc74295618bd52073528ad1a1635f92a5d77815
 
 import java.awt.Image;
 import java.text.SimpleDateFormat;
