@@ -4,6 +4,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 import com.conexiones.ConexionSQLServer;
 import com.modelos.*;
 
@@ -12,8 +15,9 @@ import com.modelos.*;
  * @project ConsultaEmpadronamieto
  * @created 10-24-2022 - 8:38 PM
  */
-public class ConsultaPersona {
+public class ConsultaPersona extends ConexionSQLServer{
 
+    private static Logger LOGGER;
     private static final String CONSULTA = "SELECT * "
             + "FROM dbo.tb_personas p "
             + "JOIN dbo.tb_firmas f "
@@ -36,20 +40,23 @@ public class ConsultaPersona {
                 + "ON mu.departamento_codigo = dep.departamento_codigo "
             + "WHERE p.persona_dpi=?;";
 
+    public ConsultaPersona(){
+        LOGGER = Logger.getLogger(ConsultaPersona.class.getName());
+    }
+
     public Firma buscarPersona(Persona solicitante){
         Connection conn = null;
         PreparedStatement stmt = null;
         ResultSet rs = null;
         Firma firma = null;
         try {
-            conn = ConexionSQLServer.getConnection();
+            conn = getConnection();
             stmt = conn.prepareStatement(CONSULTA);
             stmt.setString(1, solicitante.getDpi());
-            System.out.println("Ejecutando consulta: " + CONSULTA);
             rs = stmt.executeQuery();
             while (rs.next()) {
                 if (solicitante.getDpi().equals(rs.getString("persona_dpi"))
-                    && solicitante.getFechaDeNacimiento() == rs.getDate("persona_fechaDeNacimiento")
+                    && solicitante.getFechaDeNacimiento().equals(rs.getDate("persona_fechaDeNacimiento"))
                 )
                 {
                     Departamento departamento = new Departamento(
@@ -105,11 +112,12 @@ public class ConsultaPersona {
                             rs.getInt("linea_codigo"),
                             hoja
                     );
+                    LOGGER.log(Level.INFO,"Se ha hecho la consulta [busqueda] en la base de datos.");
                     firma = new Firma(persona, linea);
                 }
             }
         } catch (SQLException ex) {
-            ex.printStackTrace(System.out);
+            LOGGER.log(Level.SEVERE,"No se ha podido realizar la consulta exitosamente",ex);
         } finally {
             ConexionSQLServer.close(conn);
             ConexionSQLServer.close(stmt);

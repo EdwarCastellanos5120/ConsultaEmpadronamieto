@@ -9,6 +9,8 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -19,14 +21,19 @@ public class ConexionSQLServer {
     private static final String JDBC_URL = "jdbc:sqlserver://mysqlserverjlopez.database.windows.net:1433;database=Db_ConsultaEmpadronamiento;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30";
     private static final String JDBC_USER = "azureuser@mysqlserverjlopez";
     private static final String JDBC_PWD = "Jlopezg112";
+    private static Logger LOGGER;
 
-    public static Connection getConnection() throws SQLException {
+    public ConexionSQLServer(){
+        LOGGER = Logger.getLogger(ConexionSQLServer.class.getName());
+    }
+
+    public static Connection getConnection(){
         Connection conexion = null;
         try {
             conexion = DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PWD);
-            System.out.println("Buena conexion");
+            LOGGER.log(Level.INFO,"Se ha establecido la conexion a la instancia de Azure");
         } catch (SQLException ex) {
-            System.out.println("Errorcitooo");
+            LOGGER.log(Level.SEVERE,"No se ha podido establecer la conexion a la instancia de Azure",ex);
         }
         return conexion;
     }

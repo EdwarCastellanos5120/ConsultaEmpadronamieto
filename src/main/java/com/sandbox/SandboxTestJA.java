@@ -7,7 +7,11 @@ import com.modelos.Persona;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.util.Date;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.sql.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -23,25 +27,27 @@ public class SandboxTestJA {
     private static Connection connection;
 
     public static void main(String[] args) {
-        LOGGER = Logger.getLogger(SandboxTestJA.class.getName());
-        //LOGGER.log(Level.INFO,"MENSAJE TEST");
+//        LOGGER = Logger.getLogger(SandboxTestJA.class.getName());
+//        //LOGGER.log(Level.INFO,"MENSAJE TEST");
+//
+//        try {
+//            connection = DriverManager.getConnection(url);
+//            LOGGER.log(Level.INFO,"Se ha establecido la conexion a la instancia de Azure");
+//        } catch (SQLException e) {
+//            LOGGER.log(Level.SEVERE,"No se ha podido establecer la conexion a la instancia de Azure",e);
+//        }
 
-        try {
-            connection = DriverManager.getConnection(url);
-            LOGGER.log(Level.INFO,"Se ha establecido la conexion a la instancia de Azure");
-        } catch (SQLException e) {
-            LOGGER.log(Level.SEVERE,"No se ha podido establecer la conexion a la instancia de Azure",e);
-        }
+        String str="2001-10-24";
+        Date date = Date.valueOf(str);
 
-
-        ConsultaPersona consultaPersona = new ConsultaPersona();
 
         Persona persona = new Persona();
-        persona.setDpi("3422501832201");
-        persona.setFechaDeNacimiento(new Date());
+        persona.setDpi("6499436122617");
+        //fecha de nacimiento 2001-10-24
+        persona.setFechaDeNacimiento(Date.valueOf(str));
 
+        ConsultaPersona consultaPersona = new ConsultaPersona();
         Firma firma = consultaPersona.buscarPersona(persona);
-
         System.out.println(firma.toString());
 
 
