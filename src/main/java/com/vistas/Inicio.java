@@ -59,6 +59,10 @@ public class Inicio extends javax.swing.JFrame {
         jPanel7 = new javax.swing.JPanel();
         label_imagen1 = new javax.swing.JLabel();
 
+        tx_FechaNacimiento.setDate(new Date());
+
+
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -105,7 +109,7 @@ public class Inicio extends javax.swing.JFrame {
         lb_calendario.setText("calendario");
         jPanel1.add(lb_calendario, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 330, 90, 80));
 
-        tx_FechaNacimiento.setDateFormatString("dd-MM-yyyy\n");
+        tx_FechaNacimiento.setDateFormatString("yyyy-MM-dd");
         tx_FechaNacimiento.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jPanel1.add(tx_FechaNacimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 350, 280, 40));
 

@@ -1,13 +1,14 @@
 package com.Controlador;
 
 import com.accesoDatos.ConsultaPersona;
+import com.modelos.Firma;
 import com.modelos.Persona;
 import com.vistas.Inicio;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.Date;
+import java.util.Date;
 
 /**
  * @author Jorge A. López
@@ -36,16 +37,19 @@ public class InicioCtrl implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == frmInicio.bt_Buscar){
+            //Conversion fecha de nacimiento utils.Date a sql.Date
+            Date date = frmInicio.tx_FechaNacimiento.getDate();
+            long d = date.getTime();
+            java.sql.Date fechaNacimiento = new java.sql.Date(d);
+
             personaModelo.setDpi(frmInicio.tx_DPI.getText());
+            personaModelo.setFechaDeNacimiento(fechaNacimiento);
 
-            System.out.println(frmInicio.tx_FechaNacimiento.getDate());
+            Firma firma = personaConsulta.buscarPersona(personaModelo);
 
-            personaModelo.setFechaDeNacimiento((Date) frmInicio.tx_FechaNacimiento.getDate());
-
-            personaConsulta.buscarPersona(personaModelo);
-
-
-            JOptionPane.showMessageDialog(null,"Se ha hecho click a este boton");
+            JOptionPane.showMessageDialog(null,"Se han encontrado una incidencia \n DPI " + firma.getPersona().getDpi() +
+                    "\n Nombre " + firma.getPersona().getNombre1() +
+                    " "+firma.getPersona().getApellido1(),"Consulta de Empadronamiento",JOptionPane.INFORMATION_MESSAGE);
         }
 
         if (e.getSource() == frmInicio.bt_limpiar){
