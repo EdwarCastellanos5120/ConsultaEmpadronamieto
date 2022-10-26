@@ -1,8 +1,10 @@
 package com.sandbox;
 
+import com.Controlador.InicioCtrl;
 import com.accesoDatos.ConsultaPersona;
 import com.modelos.Firma;
 import com.modelos.Persona;
+import com.vistas.Inicio;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -37,19 +39,25 @@ public class SandboxTestJA {
 //            LOGGER.log(Level.SEVERE,"No se ha podido establecer la conexion a la instancia de Azure",e);
 //        }
 
-        String str="2001-10-24";
-        Date date = Date.valueOf(str);
-
+//        String str="2001-10-24";
+//        Date date = Date.valueOf(str);
+//
+//
+//        Persona persona = new Persona();
+//        persona.setDpi("6499436122617");
+//        //fecha de nacimiento 2001-10-24
+//        persona.setFechaDeNacimiento(Date.valueOf(str));
+//
+//        ConsultaPersona consultaPersona = new ConsultaPersona();
+//        Firma firma = consultaPersona.buscarPersona(persona);
+//        System.out.println(firma.toString());
 
         Persona persona = new Persona();
-        persona.setDpi("6499436122617");
-        //fecha de nacimiento 2001-10-24
-        persona.setFechaDeNacimiento(Date.valueOf(str));
-
         ConsultaPersona consultaPersona = new ConsultaPersona();
-        Firma firma = consultaPersona.buscarPersona(persona);
-        System.out.println(firma.toString());
+        Inicio frmInicio = new Inicio();
+        InicioCtrl inicioCtrl = new InicioCtrl(persona,consultaPersona,frmInicio);
 
+        inicioCtrl.inicioApp();
 
     }
 }

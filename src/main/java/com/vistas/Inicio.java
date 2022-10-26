@@ -18,8 +18,6 @@ import javax.swing.*;
  */
 public class Inicio extends javax.swing.JFrame {
 
-    
-    
     public Inicio() {
         initComponents();
         setLocationRelativeTo(this);
@@ -213,8 +211,8 @@ public class Inicio extends javax.swing.JFrame {
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton bt_Buscar;
-    private javax.swing.JButton bt_limpiar;
+    public javax.swing.JButton bt_Buscar;
+    public javax.swing.JButton bt_limpiar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
