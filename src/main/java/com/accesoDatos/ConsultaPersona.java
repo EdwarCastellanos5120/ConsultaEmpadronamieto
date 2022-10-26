@@ -114,6 +114,7 @@ public class ConsultaPersona extends ConexionSQLServer{
                     );
                     LOGGER.log(Level.INFO,"Se ha hecho la consulta [busqueda] en la base de datos.");
                     firma = new Firma(persona, linea);
+                    return firma;
                 }
             }
         } catch (SQLException ex) {
@@ -123,6 +124,7 @@ public class ConsultaPersona extends ConexionSQLServer{
             ConexionSQLServer.close(stmt);
             ConexionSQLServer.close(rs);
         }
+        LOGGER.log(Level.WARNING,"Se ha hecho la consulta [busqueda], no se encontró resultados.");
         return firma;
     }
 }

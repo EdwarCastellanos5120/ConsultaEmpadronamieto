@@ -226,8 +226,8 @@ public class Inicio extends javax.swing.JFrame {
     private javax.swing.JLabel label_imagen1;
     private javax.swing.JLabel lb_calendario;
     private javax.swing.JLabel lb_dpi;
-    private javax.swing.JTextField tx_DPI;
-    private com.toedter.calendar.JDateChooser tx_FechaNacimiento;
+    public javax.swing.JTextField tx_DPI;
+    public com.toedter.calendar.JDateChooser tx_FechaNacimiento;
     // End of variables declaration//GEN-END:variables
 
     

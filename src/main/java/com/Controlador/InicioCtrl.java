@@ -7,6 +7,7 @@ import com.vistas.Inicio;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.Date;
 
 /**
  * @author Jorge A. López
@@ -35,11 +36,21 @@ public class InicioCtrl implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == frmInicio.bt_Buscar){
+            personaModelo.setDpi(frmInicio.tx_DPI.getText());
+
+            System.out.println(frmInicio.tx_FechaNacimiento.getDate());
+
+            personaModelo.setFechaDeNacimiento((Date) frmInicio.tx_FechaNacimiento.getDate());
+
+            personaConsulta.buscarPersona(personaModelo);
+
+
             JOptionPane.showMessageDialog(null,"Se ha hecho click a este boton");
         }
 
         if (e.getSource() == frmInicio.bt_limpiar){
-            JOptionPane.showMessageDialog(null,"Se ha hecho click en este boton");
+            frmInicio.tx_DPI.setText(null);
+            frmInicio.tx_FechaNacimiento.setDate(null);
         }
     }
 }
