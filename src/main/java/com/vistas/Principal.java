@@ -66,7 +66,6 @@ public class Principal extends javax.swing.JFrame {
         lblNombreLinea.setText(firmaNueva.getLinea().getCodigo()+ "");
         rutaFotoPerfil += firmaNueva.getPersona().getFoto() + ".JPG";
         rutaFotoFirma += firmaNueva.getPersona().getFirma() + ".png";
-        JOptionPane.showMessageDialog(null, rutaFotoFirma);
         SetImageLabel(lb_fotopersona, rutaFotoPerfil);
         SetImageLabel(lb_fotofirma, rutaFotoFirma);
     }
