@@ -5,7 +5,8 @@
  */
 package com.vistas;
 
-
+import com.accesoDatos.ConsultaPersona;
+import com.modelos.Firma;
 import com.modelos.Persona;
 import java.awt.Image;
 import java.text.SimpleDateFormat;
@@ -27,16 +28,11 @@ public class Inicio extends javax.swing.JFrame {
         SetImageLabel(lb_calendario, rutaCalendario);
     }
 
-   String rutaLogo="src/main/java/com/Img/logo.png",
-    rutaFondo="src/main/java/com/Img/fondo_1.jpg",
-    rutaDPI="src/main/java/com/Img/dpi.png",
-    rutaCalendario="src/main/java/com/Img/calendario.png";
-   
-           
-    
-    
-    
-    
+    String rutaLogo = "src/main/java/com/Img/logo.png",
+            rutaFondo = "src/main/java/com/Img/fondo_1.jpg",
+            rutaDPI = "src/main/java/com/Img/dpi.png",
+            rutaCalendario = "src/main/java/com/Img/calendario.png";
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -58,10 +54,6 @@ public class Inicio extends javax.swing.JFrame {
         bt_limpiar = new javax.swing.JButton();
         jPanel7 = new javax.swing.JPanel();
         label_imagen1 = new javax.swing.JLabel();
-
-        tx_FechaNacimiento.setDate(new Date());
-
-
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -144,6 +136,11 @@ public class Inicio extends javax.swing.JFrame {
         bt_limpiar.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         bt_limpiar.setForeground(new java.awt.Color(0, 0, 0));
         bt_limpiar.setText("LIMPIAR");
+        bt_limpiar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_limpiarActionPerformed(evt);
+            }
+        });
         jPanel1.add(bt_limpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 500, 160, 40));
 
         jPanel7.setBackground(new java.awt.Color(255, 153, 51));
@@ -164,8 +161,36 @@ public class Inicio extends javax.swing.JFrame {
 
     private void bt_BuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_BuscarActionPerformed
 
+        if (tx_DPI.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Rellene el Campo Vacio", "Error", JOptionPane.WARNING_MESSAGE);
+        } else {
+            Date date = tx_FechaNacimiento.getDate();
+            long d = date.getTime();
+            java.sql.Date fechaNacimiento = new java.sql.Date(d);
+
+            Persona personaModelo = new Persona();
+            ConsultaPersona consultaPersona = new ConsultaPersona();
+            personaModelo.setDpi(tx_DPI.getText());
+            personaModelo.setFechaDeNacimiento(fechaNacimiento);
+
+            Firma firma = consultaPersona.buscarPersona(personaModelo);
+            if (firma == null) {
+                JOptionPane.showMessageDialog(null, "Uno de los campos esta incorrecto", "Error", JOptionPane.WARNING_MESSAGE);
+            } else {
+                Principal pr = new Principal();
+                pr.constructor(firma);
+                pr.setVisible(true);
+                this.setVisible(false);
+            }
+
+        }
+
     }//GEN-LAST:event_bt_BuscarActionPerformed
 
+    private void bt_limpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_limpiarActionPerformed
+        tx_DPI.setText(null);
+        tx_FechaNacimiento.setDate(null);
+    }//GEN-LAST:event_bt_limpiarActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -199,24 +224,25 @@ public class Inicio extends javax.swing.JFrame {
         });
     }
 
-    private void SetImageLabel(JLabel label, String path){
+    private void SetImageLabel(JLabel label, String path) {
         ImageIcon image = new ImageIcon(path);
         Icon icon = new ImageIcon(
-        image.getImage().getScaledInstance(label.getWidth(), label.getHeight(), Image.SCALE_DEFAULT));
+                image.getImage().getScaledInstance(label.getWidth(), label.getHeight(), Image.SCALE_DEFAULT));
         label.setIcon(icon);
         this.repaint();
     }
-     private void SetImageBoton(JButton button, String path){
+
+    private void SetImageBoton(JButton button, String path) {
         ImageIcon image = new ImageIcon(path);
         Icon icon = new ImageIcon(
-        image.getImage().getScaledInstance(button.getWidth(), button.getHeight(), Image.SCALE_DEFAULT));
+                image.getImage().getScaledInstance(button.getWidth(), button.getHeight(), Image.SCALE_DEFAULT));
         button.setIcon(icon);
         this.repaint();
     }
-    
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton bt_Buscar;
-    public javax.swing.JButton bt_limpiar;
+    private javax.swing.JButton bt_Buscar;
+    private javax.swing.JButton bt_limpiar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -230,11 +256,8 @@ public class Inicio extends javax.swing.JFrame {
     private javax.swing.JLabel label_imagen1;
     private javax.swing.JLabel lb_calendario;
     private javax.swing.JLabel lb_dpi;
-    public javax.swing.JTextField tx_DPI;
-    public com.toedter.calendar.JDateChooser tx_FechaNacimiento;
+    private javax.swing.JTextField tx_DPI;
+    private com.toedter.calendar.JDateChooser tx_FechaNacimiento;
     // End of variables declaration//GEN-END:variables
 
-    
-    
-    
 }
