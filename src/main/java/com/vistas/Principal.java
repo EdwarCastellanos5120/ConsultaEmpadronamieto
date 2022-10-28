@@ -294,8 +294,8 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonRegresar;
-    private javax.swing.JButton jButtonVerMapa;
+    public javax.swing.JButton jButtonRegresar;
+    public javax.swing.JButton jButtonVerMapa;
     private javax.swing.JLabel jLabel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -310,19 +310,19 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanelFirma;
     private javax.swing.JPanel jPanelFoto;
-    private javax.swing.JLabel lbNombreHoja;
-    private javax.swing.JLabel lb_fondo;
-    private javax.swing.JLabel lb_fotofirma;
-    private javax.swing.JLabel lb_fotopersona;
-    private javax.swing.JLabel lblDepto;
-    private javax.swing.JLabel lblDireccion;
-    private javax.swing.JLabel lblDpi;
-    private javax.swing.JLabel lblFechaNacimiento;
-    private javax.swing.JLabel lblMunicipio;
-    private javax.swing.JLabel lblNombre;
-    private javax.swing.JLabel lblNombreLibro;
-    private javax.swing.JLabel lblNombreLinea;
-    private javax.swing.JLabel lblNombreMesa;
-    private javax.swing.JLabel lblNumEmpadronamiento;
+    public javax.swing.JLabel lbNombreHoja;
+    public javax.swing.JLabel lb_fondo;
+    public javax.swing.JLabel lb_fotofirma;
+    public javax.swing.JLabel lb_fotopersona;
+    public javax.swing.JLabel lblDepto;
+    public javax.swing.JLabel lblDireccion;
+    public javax.swing.JLabel lblDpi;
+    public javax.swing.JLabel lblFechaNacimiento;
+    public javax.swing.JLabel lblMunicipio;
+    public javax.swing.JLabel lblNombre;
+    public javax.swing.JLabel lblNombreLibro;
+    public javax.swing.JLabel lblNombreLinea;
+    public javax.swing.JLabel lblNombreMesa;
+    public javax.swing.JLabel lblNumEmpadronamiento;
     // End of variables declaration//GEN-END:variables
 }

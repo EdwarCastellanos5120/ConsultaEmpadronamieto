@@ -1,10 +1,12 @@
 package com.sandbox;
 
 import com.Controlador.InicioCtrl;
+import com.Controlador.PrincipalCtrl;
 import com.accesoDatos.ConsultaPersona;
 import com.modelos.Firma;
 import com.modelos.Persona;
 import com.vistas.Inicio;
+import com.vistas.Principal;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -53,9 +55,14 @@ public class SandboxTestJA {
 //        System.out.println(firma.toString());
 
         Persona persona = new Persona();
+        Firma firma = new Firma();
+
         ConsultaPersona consultaPersona = new ConsultaPersona();
         Inicio frmInicio = new Inicio();
-        InicioCtrl inicioCtrl = new InicioCtrl(persona,consultaPersona,frmInicio);
+        Principal frmPrincipal = new Principal();
+
+        InicioCtrl inicioCtrl = new InicioCtrl(persona,consultaPersona,frmInicio,frmPrincipal);
+
 
         inicioCtrl.inicioApp();
 
