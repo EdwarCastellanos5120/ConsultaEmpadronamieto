@@ -125,22 +125,22 @@ public class Inicio extends javax.swing.JFrame {
         bt_Buscar.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         bt_Buscar.setForeground(new java.awt.Color(0, 0, 0));
         bt_Buscar.setText("BUSCAR");
-        bt_Buscar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bt_BuscarActionPerformed(evt);
-            }
-        });
+//        bt_Buscar.addActionListener(new java.awt.event.ActionListener() {
+//            public void actionPerformed(java.awt.event.ActionEvent evt) {
+//                bt_BuscarActionPerformed(evt);
+//            }
+//        });
         jPanel1.add(bt_Buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 450, 160, 40));
 
         bt_limpiar.setBackground(new java.awt.Color(255, 255, 102));
         bt_limpiar.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         bt_limpiar.setForeground(new java.awt.Color(0, 0, 0));
         bt_limpiar.setText("LIMPIAR");
-        bt_limpiar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bt_limpiarActionPerformed(evt);
-            }
-        });
+//        bt_limpiar.addActionListener(new java.awt.event.ActionListener() {
+//            public void actionPerformed(java.awt.event.ActionEvent evt) {
+//                bt_limpiarActionPerformed(evt);
+//            }
+//        });
         jPanel1.add(bt_limpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 500, 160, 40));
 
         jPanel7.setBackground(new java.awt.Color(255, 153, 51));
@@ -159,38 +159,38 @@ public class Inicio extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_tx_DPIActionPerformed
 
-    private void bt_BuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_BuscarActionPerformed
+//    private void bt_BuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_BuscarActionPerformed
+//
+//        if (tx_DPI.getText().equals("")) {
+//            JOptionPane.showMessageDialog(null, "Rellene el Campo Vacio", "Error", JOptionPane.WARNING_MESSAGE);
+//        } else {
+//            Date date = tx_FechaNacimiento.getDate();
+//            long d = date.getTime();
+//            java.sql.Date fechaNacimiento = new java.sql.Date(d);
+//
+//            Persona personaModelo = new Persona();
+//            ConsultaPersona consultaPersona = new ConsultaPersona();
+//            personaModelo.setDpi(tx_DPI.getText());
+//            personaModelo.setFechaDeNacimiento(fechaNacimiento);
+//
+//            Firma firma = consultaPersona.buscarPersona(personaModelo);
+//            if (firma == null) {
+//                JOptionPane.showMessageDialog(null, "Uno de los campos esta incorrecto", "Error", JOptionPane.WARNING_MESSAGE);
+//            } else {
+//                Principal pr = new Principal();
+//                pr.constructor(firma);
+//                pr.setVisible(true);
+//                this.setVisible(false);
+//            }
+//
+//        }
 
-        if (tx_DPI.getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "Rellene el Campo Vacio", "Error", JOptionPane.WARNING_MESSAGE);
-        } else {
-            Date date = tx_FechaNacimiento.getDate();
-            long d = date.getTime();
-            java.sql.Date fechaNacimiento = new java.sql.Date(d);
+//    }//GEN-LAST:event_bt_BuscarActionPerformed
 
-            Persona personaModelo = new Persona();
-            ConsultaPersona consultaPersona = new ConsultaPersona();
-            personaModelo.setDpi(tx_DPI.getText());
-            personaModelo.setFechaDeNacimiento(fechaNacimiento);
-
-            Firma firma = consultaPersona.buscarPersona(personaModelo);
-            if (firma == null) {
-                JOptionPane.showMessageDialog(null, "Uno de los campos esta incorrecto", "Error", JOptionPane.WARNING_MESSAGE);
-            } else {
-                Principal pr = new Principal();
-                pr.constructor(firma);
-                pr.setVisible(true);
-                this.setVisible(false);
-            }
-
-        }
-
-    }//GEN-LAST:event_bt_BuscarActionPerformed
-
-    private void bt_limpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_limpiarActionPerformed
-        tx_DPI.setText(null);
-        tx_FechaNacimiento.setDate(null);
-    }//GEN-LAST:event_bt_limpiarActionPerformed
+//    private void bt_limpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_limpiarActionPerformed
+//        tx_DPI.setText(null);
+//        tx_FechaNacimiento.setDate(null);
+//    }//GEN-LAST:event_bt_limpiarActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */

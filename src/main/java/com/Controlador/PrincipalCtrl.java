@@ -24,6 +24,9 @@ public class PrincipalCtrl implements ActionListener {
     private Libro libro;
     private Mesa mesa;
 
+    private String fotoPath = "src/main/java/com/Img/fotos/";
+    private String firmaPath = "src/main/java/com/Img/firmas/";
+
     public PrincipalCtrl(Firma firma, Principal frmPrincipal){
         this.firma = firma;
         this.persona = firma.getPersona();
@@ -54,10 +57,25 @@ public class PrincipalCtrl implements ActionListener {
         frmPrincipal.lblNombre.setText(persona.getNombre1() + " " + persona.getNombre2() + " " +persona.getApellido1() + " " +persona.getApellido2());
         frmPrincipal.lbNombreHoja.setText(String.valueOf(hoja.getCodigo()));
         frmPrincipal.lblNumEmpadronamiento.setText(String.valueOf(persona.getPadron()));
+
+
+        frmPrincipal.SetImageLabel(frmPrincipal.lb_fotopersona,fotoPath.concat(persona.getFoto().concat(".jpg")));
+        frmPrincipal.SetImageLabel(frmPrincipal.lb_fotofirma,firmaPath.concat(persona.getFirma().concat(".png")));
+
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
+
+        if (e.getSource() == frmPrincipal.jButtonRegresar){
+            InicioCtrl.limpiar();
+            InicioCtrl.frmInicio.setVisible(true);
+            frmPrincipal.setVisible(false);
+        }
+
+        if(e.getSource() == frmPrincipal.jButtonVerMapa){
+
+        }
 
 
     }

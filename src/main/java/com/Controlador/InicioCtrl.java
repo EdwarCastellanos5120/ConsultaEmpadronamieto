@@ -19,7 +19,7 @@ import java.util.Date;
 public class InicioCtrl implements ActionListener {
     private Persona personaModelo;
     private ConsultaPersona personaConsulta;
-    private Inicio frmInicio;
+    public static Inicio frmInicio;
     private Principal frmPrincipal;
 
     public InicioCtrl(Persona personaModelo, ConsultaPersona personaConsulta, Inicio frmInicio, Principal frmPrincipal){
@@ -70,7 +70,13 @@ public class InicioCtrl implements ActionListener {
         }
 
         if (e.getSource() == frmInicio.bt_limpiar){
-            frmInicio.tx_DPI.setText(null);
+            limpiar();
         }
     }
+
+    public static void limpiar(){
+        frmInicio.tx_DPI.setText(null);
+        frmInicio.tx_FechaNacimiento.setDate(new Date());
+    }
+
 }

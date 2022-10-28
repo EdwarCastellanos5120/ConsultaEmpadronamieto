@@ -119,11 +119,11 @@ public class Principal extends javax.swing.JFrame {
         jButtonVerMapa.setForeground(new java.awt.Color(0, 0, 0));
         jButtonVerMapa.setText("VER MAPA");
         jButtonVerMapa.setBorder(null);
-        jButtonVerMapa.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonVerMapaActionPerformed(evt);
-            }
-        });
+//        jButtonVerMapa.addActionListener(new java.awt.event.ActionListener() {
+//            public void actionPerformed(java.awt.event.ActionEvent evt) {
+//                jButtonVerMapaActionPerformed(evt);
+//            }
+//        });
         getContentPane().add(jButtonVerMapa, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 530, 170, 50));
 
         jLabel1.setFont(new java.awt.Font("Dialog", 3, 36)); // NOI18N
@@ -193,11 +193,11 @@ public class Principal extends javax.swing.JFrame {
         jButtonRegresar.setForeground(new java.awt.Color(0, 0, 0));
         jButtonRegresar.setText("Regresar");
         jButtonRegresar.setBorder(null);
-        jButtonRegresar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonRegresarActionPerformed(evt);
-            }
-        });
+//        jButtonRegresar.addActionListener(new java.awt.event.ActionListener() {
+//            public void actionPerformed(java.awt.event.ActionEvent evt) {
+//                jButtonRegresarActionPerformed(evt);
+//            }
+//        });
         getContentPane().add(jButtonRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 110, 40));
 
         jPanelFoto.setBackground(new java.awt.Color(255, 255, 255));
@@ -287,17 +287,17 @@ public class Principal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButtonVerMapaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVerMapaActionPerformed
-        Mapa mapa= new Mapa();
-       mapa.setVisible(true);
-       this.setVisible(false);
-    }//GEN-LAST:event_jButtonVerMapaActionPerformed
-
-    private void jButtonRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegresarActionPerformed
-       Inicio inicio= new Inicio();
-       inicio.setVisible(true);
-       this.setVisible(false);
-    }//GEN-LAST:event_jButtonRegresarActionPerformed
+//    private void jButtonVerMapaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVerMapaActionPerformed
+//        Mapa mapa= new Mapa();
+//       mapa.setVisible(true);
+//       this.setVisible(false);
+//    }//GEN-LAST:event_jButtonVerMapaActionPerformed
+//
+//    private void jButtonRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegresarActionPerformed
+//       Inicio inicio= new Inicio();
+//       inicio.setVisible(true);
+//       this.setVisible(false);
+//    }//GEN-LAST:event_jButtonRegresarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -350,8 +350,8 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanelFirma;
-    private javax.swing.JPanel jPanelFoto;
+    public javax.swing.JPanel jPanelFirma;
+    public javax.swing.JPanel jPanelFoto;
     public javax.swing.JLabel lbNombreHoja;
     public javax.swing.JLabel lb_fondo;
     public javax.swing.JLabel lb_fotofirma;
