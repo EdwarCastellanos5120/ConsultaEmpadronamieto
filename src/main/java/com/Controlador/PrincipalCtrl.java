@@ -86,7 +86,7 @@ public class PrincipalCtrl implements ActionListener {
         frmPrincipal.lblNombreMesa.setText(String.valueOf(mesa.getCodigo()));
         frmPrincipal.lblNombre.setText(persona.getNombre1() + " " + persona.getNombre2() + " " +persona.getApellido1() + " " +persona.getApellido2());
         frmPrincipal.lbNombreHoja.setText(String.valueOf(hoja.getCodigo()));
-        frmPrincipal.lblNumEmpadronamiento.setText(String.valueOf(persona.getPadron()));
+        frmPrincipal.lblNumEmpadronamiento.setText(persona.getDpi());
 
 
         frmPrincipal.SetImageLabel(frmPrincipal.lb_fotopersona,fotoPath.concat(persona.getFoto().concat(".jpg")));
