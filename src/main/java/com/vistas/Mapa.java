@@ -132,11 +132,7 @@ public class Mapa extends javax.swing.JFrame {
         this.repaint();
     }
     
-    
-    
-    
-    
-    
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel MAPA;

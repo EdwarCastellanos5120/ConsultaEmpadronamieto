@@ -10,6 +10,8 @@ import java.util.logging.Logger;
 import com.conexiones.ConexionSQLServer;
 import com.modelos.*;
 
+import javax.swing.*;
+
 /**
  * @author Jorge A. López
  * @project ConsultaEmpadronamieto
@@ -124,6 +126,7 @@ public class ConsultaPersona extends ConexionSQLServer{
             ConexionSQLServer.close(stmt);
             ConexionSQLServer.close(rs);
         }
+        JOptionPane.showMessageDialog(null,"No se han encontrado resultados","Error",JOptionPane.ERROR_MESSAGE);
         LOGGER.log(Level.WARNING,"Se ha hecho la consulta [busqueda], no se encontró resultados.");
         return firma;
     }

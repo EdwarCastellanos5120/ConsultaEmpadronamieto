@@ -1,10 +1,38 @@
 package com.Controlador;
 
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+import javax.swing.JFrame;
+import javax.swing.event.MouseInputListener;
+
+import org.jxmapviewer.JXMapViewer;
+import org.jxmapviewer.OSMTileFactoryInfo;
+import org.jxmapviewer.input.CenterMapListener;
+import org.jxmapviewer.input.PanKeyListener;
+import org.jxmapviewer.input.PanMouseInputListener;
+import org.jxmapviewer.input.ZoomMouseWheelListenerCursor;
+import org.jxmapviewer.painter.CompoundPainter;
+import org.jxmapviewer.painter.Painter;
+import org.jxmapviewer.viewer.DefaultTileFactory;
+import org.jxmapviewer.viewer.DefaultWaypoint;
+import org.jxmapviewer.viewer.GeoPosition;
+import org.jxmapviewer.viewer.TileFactoryInfo;
+import org.jxmapviewer.viewer.Waypoint;
+import org.jxmapviewer.viewer.WaypointPainter;
+
 import com.modelos.*;
+import com.vistas.Mapa;
 import com.vistas.Principal;
+import com.vistas.RoutePainter;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
 
 /**
  * @author Jorge A. López
@@ -14,6 +42,7 @@ import java.awt.event.ActionListener;
 public class PrincipalCtrl implements ActionListener {
     private Firma firma;
     private Principal frmPrincipal;
+    private Mapa frmMapa;
     private Persona persona;
     private Direccion direccion;
     private Municipio municipio;
@@ -40,6 +69,7 @@ public class PrincipalCtrl implements ActionListener {
         this.centroDeVotacion = this.mesa.getCentroVotacion();
 
         this.frmPrincipal = frmPrincipal;
+//        this.frmMapa = new Mapa();
 
         this.frmPrincipal.jButtonRegresar.addActionListener(this);
         this.frmPrincipal.jButtonVerMapa.addActionListener(this);
@@ -62,7 +92,10 @@ public class PrincipalCtrl implements ActionListener {
         frmPrincipal.SetImageLabel(frmPrincipal.lb_fotopersona,fotoPath.concat(persona.getFoto().concat(".jpg")));
         frmPrincipal.SetImageLabel(frmPrincipal.lb_fotofirma,firmaPath.concat(persona.getFirma().concat(".png")));
 
+
+
     }
+
 
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -74,7 +107,49 @@ public class PrincipalCtrl implements ActionListener {
         }
 
         if(e.getSource() == frmPrincipal.jButtonVerMapa){
+            JXMapViewer mapViewer = new JXMapViewer();
 
+            JFrame frame = new JFrame("Donde debes votar...");
+            frame.getContentPane().add(mapViewer);
+            frame.setSize(800, 600);
+            frame.setVisible(true);
+
+            TileFactoryInfo info = new OSMTileFactoryInfo();
+            DefaultTileFactory tileFactory = new DefaultTileFactory(info);
+            mapViewer.setTileFactory(tileFactory);
+
+            GeoPosition dirVotacion = new GeoPosition(direccion.getLatitud(),direccion.getLongitud());
+
+
+            List<GeoPosition> track = Arrays.asList(dirVotacion);
+            RoutePainter routePainter = new RoutePainter(track);
+
+            // Calcula el nivel de enfoque
+            mapViewer.zoomToBestFit(new HashSet<GeoPosition>(track), 1);
+
+            // Se anadieron interacciones , mouse listener
+            MouseInputListener mia = new PanMouseInputListener(mapViewer);
+            mapViewer.addMouseListener(mia);
+            mapViewer.addMouseMotionListener(mia);
+
+            mapViewer.addMouseListener(new CenterMapListener(mapViewer));
+
+            mapViewer.addMouseWheelListener(new ZoomMouseWheelListenerCursor(mapViewer));
+
+            mapViewer.addKeyListener(new PanKeyListener(mapViewer));
+
+            Set<Waypoint> waypoints = new HashSet<Waypoint>(Arrays.asList(
+                    new DefaultWaypoint(dirVotacion)));
+
+            WaypointPainter<Waypoint> waypointPainter = new WaypointPainter<Waypoint>();
+            waypointPainter.setWaypoints(waypoints);
+
+            List<Painter<JXMapViewer>> painters = new ArrayList<Painter<JXMapViewer>>();
+            painters.add(routePainter);
+            painters.add(waypointPainter);
+
+            CompoundPainter<JXMapViewer> painter = new CompoundPainter<JXMapViewer>(painters);
+            mapViewer.setOverlayPainter(painter);
         }
 
 
