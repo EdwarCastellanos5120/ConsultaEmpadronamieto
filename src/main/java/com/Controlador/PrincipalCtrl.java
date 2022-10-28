@@ -24,19 +24,17 @@ public class PrincipalCtrl implements ActionListener {
     private Libro libro;
     private Mesa mesa;
 
-
     public PrincipalCtrl(Firma firma, Principal frmPrincipal){
         this.firma = firma;
         this.persona = firma.getPersona();
         this.direccion = persona.getDireccion();
-        this.municipio = this.direccion.getMunicipio();
-        this.departamento = this.municipio.getDepartamento();
+        this.municipio = direccion.getMunicipio();
+        this.departamento = municipio.getDepartamento();
         this.linea = firma.getLinea();
-        this.hoja = this.linea.getHoja();
-        this.libro = this.hoja.getLibro();
-        this.mesa = this.libro.getMesa();
+        this.hoja = linea.getHoja();
+        this.libro = hoja.getLibro();
+        this.mesa = libro.getMesa();
         this.centroDeVotacion = this.mesa.getCentroVotacion();
-
 
         this.frmPrincipal = frmPrincipal;
 

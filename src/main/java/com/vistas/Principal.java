@@ -5,10 +5,13 @@
  */
 package com.vistas;
 
+import com.modelos.Firma;
 import java.awt.Image;
+import java.text.SimpleDateFormat;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
@@ -24,22 +27,49 @@ public class Principal extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(this);
         SetImageLabel(lb_fondo, rutaFondo);
-        //SetImageLabel(lb_fotopersona, rutaFondo);
     }
 
-       String rutaFondo="src/main/java/com/Img/fondo_1.jpg";
+    String rutaFondo = "src/main/java/com/Img/fondo_1.jpg";
+    String rutaFotoPerfil ="src/main/java/com/Img/fotos/";
+    String rutaFotoFirma ="src/main/java/com/Img/firmas/";
 
-        private void SetImageLabel(JLabel label, String path){
+    public void SetImageLabel(JLabel label, String path) {
         ImageIcon image = new ImageIcon(path);
         Icon icon = new ImageIcon(
-        image.getImage().getScaledInstance(label.getWidth(), label.getHeight(), Image.SCALE_DEFAULT));
+                image.getImage().getScaledInstance(label.getWidth(), label.getHeight(), Image.SCALE_DEFAULT));
         label.setIcon(icon);
         this.repaint();
-        }
-       
+    }
+
+    Firma firmaNueva = new Firma();
+
+    public void constructor(Firma firma) {
+        firmaNueva = firma;
+        lblDpi.setText(firmaNueva.getPersona().getDpi());
+        lblNombre.setText(firmaNueva.getPersona().getNombre1() + " " + firmaNueva.getPersona().getNombre2() + " "
+                + firmaNueva.getPersona().getApellido1() + " " + firmaNueva.getPersona().getApellido2());
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        lblFechaNacimiento.setText(sdf.format(firmaNueva.getPersona().getFechaDeNacimiento()));
+        lblDepto.setText(firmaNueva.getPersona().getDireccion().getMunicipio().getDepartamento().getNombre());
+        lblMunicipio.setText(firmaNueva.getPersona().getDireccion().getMunicipio().getNombre());
         
+        lblDireccion.setText("Zona " + firmaNueva.getPersona().getDireccion().getZona() + " Calle "
+                + firmaNueva.getPersona().getDireccion().getCalle() + " Avenida " + firmaNueva.getPersona().getDireccion().getAvenida()
+                + " Casa No. " + firmaNueva.getPersona().getDireccion().getCasa() + " "+ 
+                        firmaNueva.getPersona().getDireccion().getMunicipio().getNombre()+"," +
+                firmaNueva.getPersona().getDireccion().getMunicipio().getDepartamento().getNombre());
         
-        
+        lblNumEmpadronamiento.setText(firmaNueva.getPersona().getDpi());
+        lblNombreMesa.setText(firmaNueva.getLinea().getHoja().getLibro().getMesa().getCodigo() + "");
+        lblNombreLibro.setText(firmaNueva.getLinea().getHoja().getLibro().getCodigo() + "");
+        lbNombreHoja.setText(firmaNueva.getLinea().getHoja().getCodigo() + "");
+        lblNombreLinea.setText(firmaNueva.getLinea().getCodigo()+ "");
+        rutaFotoPerfil += firmaNueva.getPersona().getFoto() + ".JPG";
+        rutaFotoFirma += firmaNueva.getPersona().getFirma() + ".png";
+        SetImageLabel(lb_fotopersona, rutaFotoPerfil);
+        SetImageLabel(lb_fotofirma, rutaFotoFirma);
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -78,6 +108,7 @@ public class Principal extends javax.swing.JFrame {
         lblMunicipio = new javax.swing.JLabel();
         lblDireccion = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
         lb_fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -148,8 +179,9 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel9.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 153, 102));
-        jLabel9.setText("NÚMERO DE \nEMPADRONAMIENTO:");
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 320, 290, 20));
+        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel9.setText("FIRMA");
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 300, 290, 20));
 
         jLabel10.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 153, 102));
@@ -183,9 +215,9 @@ public class Principal extends javax.swing.JFrame {
         jPanelFirma.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lb_fotofirma.setText("foto_firma");
-        jPanelFirma.add(lb_fotofirma, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 280, 160));
+        jPanelFirma.add(lb_fotofirma, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 230));
 
-        getContentPane().add(jPanelFirma, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 330, 280, 160));
+        getContentPane().add(jPanelFirma, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 330, 400, 230));
 
         lblNombre.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         lblNombre.setForeground(new java.awt.Color(255, 255, 255));
@@ -237,25 +269,34 @@ public class Principal extends javax.swing.JFrame {
         lblDireccion.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         lblDireccion.setForeground(new java.awt.Color(255, 255, 255));
         lblDireccion.setText("DIRECCION LB");
-        getContentPane().add(lblDireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 260, 500, 20));
+        getContentPane().add(lblDireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 260, 610, 20));
 
         jLabel11.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 153, 102));
         jLabel11.setText("NUMERO DE LIBRO:");
         getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 410, 160, 20));
 
+        jLabel12.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 153, 102));
+        jLabel12.setText("NÚMERO DE \nEMPADRONAMIENTO:");
+        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 320, 290, 20));
+
         lb_fondo.setText("jLabel2");
-        getContentPane().add(lb_fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 750, 620));
+        getContentPane().add(lb_fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 860, 620));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonVerMapaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVerMapaActionPerformed
-        // TODO add your handling code here:
+        Mapa mapa= new Mapa();
+       mapa.setVisible(true);
+       this.setVisible(false);
     }//GEN-LAST:event_jButtonVerMapaActionPerformed
 
     private void jButtonRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegresarActionPerformed
-        // TODO add your handling code here:
+       Inicio inicio= new Inicio();
+       inicio.setVisible(true);
+       this.setVisible(false);
     }//GEN-LAST:event_jButtonRegresarActionPerformed
 
     /**
@@ -300,6 +341,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
