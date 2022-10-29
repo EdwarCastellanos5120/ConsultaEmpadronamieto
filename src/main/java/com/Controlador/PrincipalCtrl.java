@@ -52,10 +52,28 @@ public class PrincipalCtrl implements ActionListener {
     private Hoja hoja;
     private Libro libro;
     private Mesa mesa;
+    private JXMapViewer mapViewer;
+    private JFrame frame;
 
     private String fotoPath = "src/main/java/com/Img/fotos/";
     private String firmaPath = "src/main/java/com/Img/firmas/";
+    private GeoPosition dirVotacion;
 
+
+    public PrincipalCtrl(){
+        frame = new JFrame("Donde debes votar...");
+        frame.setSize(800, 600);
+        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        frame.setVisible(false);
+
+        mapViewer = new JXMapViewer();
+        frame.getContentPane().add(mapViewer);
+
+        TileFactoryInfo info = new OSMTileFactoryInfo();
+        DefaultTileFactory tileFactory = new DefaultTileFactory(info);
+
+        mapViewer.setTileFactory(tileFactory);
+    }
     public PrincipalCtrl(Firma firma, Principal frmPrincipal){
         this.firma = firma;
         this.persona = firma.getPersona();
@@ -70,6 +88,51 @@ public class PrincipalCtrl implements ActionListener {
 
         this.frmPrincipal = frmPrincipal;
 //        this.frmMapa = new Mapa();
+        frame = new JFrame("Donde debes votar...");
+        frame.setSize(800, 600);
+        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        frame.setVisible(false);
+
+        mapViewer = new JXMapViewer();
+        frame.getContentPane().add(mapViewer);
+
+        TileFactoryInfo info = new OSMTileFactoryInfo();
+        DefaultTileFactory tileFactory = new DefaultTileFactory(info);
+
+        mapViewer.setTileFactory(tileFactory);
+
+
+        this.frmPrincipal.jButtonRegresar.addActionListener(this);
+        this.frmPrincipal.jButtonVerMapa.addActionListener(this);
+    }
+
+    public void PasarData(Firma firma, Principal frmPrincipal){
+        this.firma = firma;
+        this.persona = firma.getPersona();
+        this.direccion = persona.getDireccion();
+        this.municipio = direccion.getMunicipio();
+        this.departamento = municipio.getDepartamento();
+        this.linea = firma.getLinea();
+        this.hoja = linea.getHoja();
+        this.libro = hoja.getLibro();
+        this.mesa = libro.getMesa();
+        this.centroDeVotacion = this.mesa.getCentroVotacion();
+
+        this.frmPrincipal = frmPrincipal;
+//        this.frmMapa = new Mapa();
+        frame = new JFrame("Donde debes votar...");
+        frame.setSize(800, 600);
+        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        frame.setVisible(false);
+
+        mapViewer = new JXMapViewer();
+        frame.getContentPane().add(mapViewer);
+
+        TileFactoryInfo info = new OSMTileFactoryInfo();
+        DefaultTileFactory tileFactory = new DefaultTileFactory(info);
+
+        mapViewer.setTileFactory(tileFactory);
+
 
         this.frmPrincipal.jButtonRegresar.addActionListener(this);
         this.frmPrincipal.jButtonVerMapa.addActionListener(this);
@@ -88,6 +151,7 @@ public class PrincipalCtrl implements ActionListener {
         frmPrincipal.lbNombreHoja.setText(String.valueOf(hoja.getCodigo()));
         frmPrincipal.lblNumEmpadronamiento.setText(persona.getDpi());
 
+        dirVotacion = new GeoPosition(direccion.getLatitud(), direccion.getLongitud());
 
         frmPrincipal.SetImageLabel(frmPrincipal.lb_fotopersona,fotoPath.concat(persona.getFoto().concat(".jpg")));
         frmPrincipal.SetImageLabel(frmPrincipal.lb_fotofirma,firmaPath.concat(persona.getFirma().concat(".png")));
@@ -107,19 +171,6 @@ public class PrincipalCtrl implements ActionListener {
         }
 
         if(e.getSource() == frmPrincipal.jButtonVerMapa){
-            JXMapViewer mapViewer = new JXMapViewer();
-
-            JFrame frame = new JFrame("Donde debes votar...");
-            frame.getContentPane().add(mapViewer);
-            frame.setSize(800, 600);
-            frame.setVisible(true);
-
-            TileFactoryInfo info = new OSMTileFactoryInfo();
-            DefaultTileFactory tileFactory = new DefaultTileFactory(info);
-            mapViewer.setTileFactory(tileFactory);
-
-            GeoPosition dirVotacion = new GeoPosition(direccion.getLatitud(),direccion.getLongitud());
-
 
             List<GeoPosition> track = Arrays.asList(dirVotacion);
             RoutePainter routePainter = new RoutePainter(track);
@@ -150,6 +201,8 @@ public class PrincipalCtrl implements ActionListener {
 
             CompoundPainter<JXMapViewer> painter = new CompoundPainter<JXMapViewer>(painters);
             mapViewer.setOverlayPainter(painter);
+
+            frame.setVisible(true);
         }
 
 

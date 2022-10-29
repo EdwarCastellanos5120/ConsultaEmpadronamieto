@@ -21,6 +21,7 @@ public class InicioCtrl implements ActionListener {
     private ConsultaPersona personaConsulta;
     public static Inicio frmInicio;
     private Principal frmPrincipal;
+    private PrincipalCtrl controladorPrincipal;
 
     public InicioCtrl(Persona personaModelo, ConsultaPersona personaConsulta, Inicio frmInicio, Principal frmPrincipal){
         this.personaModelo = personaModelo;
@@ -28,6 +29,7 @@ public class InicioCtrl implements ActionListener {
         this.frmInicio = frmInicio;
         this.frmPrincipal = frmPrincipal;
 
+        controladorPrincipal = new PrincipalCtrl();
 
         this.frmInicio.bt_Buscar.addActionListener(this);
         this.frmInicio.bt_limpiar.addActionListener(this);
@@ -62,7 +64,7 @@ public class InicioCtrl implements ActionListener {
                         " "+firma.getPersona().getApellido1(),"Consulta de Empadronamiento",JOptionPane.INFORMATION_MESSAGE);
 
                 frmInicio.setVisible(false);
-                PrincipalCtrl controladorPrincipal = new PrincipalCtrl(firma,frmPrincipal);
+                controladorPrincipal.PasarData(firma,frmPrincipal);
                 controladorPrincipal.llenarDatos();
                 frmPrincipal.setVisible(true);
 
