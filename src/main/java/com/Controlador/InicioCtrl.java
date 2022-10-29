@@ -59,9 +59,9 @@ public class InicioCtrl implements ActionListener {
 
                 Firma firma = personaConsulta.buscarPersona(personaModelo);
 
-                JOptionPane.showMessageDialog(null,"Se han encontrado una incidencia \n DPI " + firma.getPersona().getDpi() +
-                        "\n Nombre " + firma.getPersona().getNombre1() +
-                        " "+firma.getPersona().getApellido1(),"Consulta de Empadronamiento",JOptionPane.INFORMATION_MESSAGE);
+//                JOptionPane.showMessageDialog(null,"Se han encontrado una incidencia \n DPI " + firma.getPersona().getDpi() +
+//                        "\n Nombre " + firma.getPersona().getNombre1() +
+//                        " "+firma.getPersona().getApellido1(),"Consulta de Empadronamiento",JOptionPane.INFORMATION_MESSAGE);
 
                 frmInicio.setVisible(false);
                 controladorPrincipal.PasarData(firma,frmPrincipal);

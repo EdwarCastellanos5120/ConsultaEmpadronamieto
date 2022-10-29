@@ -21,6 +21,12 @@
             <artifactId>mssql-jdbc</artifactId>
             <version>11.2.0.jre11</version>
         </dependency>
+        <dependency>
+            <groupId>org.jxmapviewer</groupId>
+            <artifactId>jxmapviewer2</artifactId>
+            <version>2.2</version>
+        </dependency>
+
 
     </dependencies>
     <properties>
